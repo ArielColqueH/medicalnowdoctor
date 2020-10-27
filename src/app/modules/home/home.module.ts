@@ -14,6 +14,13 @@ import { MatButtonModule } from "@angular/material/button";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from "@angular/material/list";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { AsistenciaComponent } from './pages/home/asistencia/asistencia.component';
+import { RecetasComponent } from './pages/home/recetas/recetas.component';
+import { HistorialComponent } from './pages/home/historial/historial.component';
+import { LaboratoriosComponent } from './pages/home/laboratorios/laboratorios.component';
+import { ConfiguracionesComponent } from './pages/home/configuraciones/configuraciones.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +32,11 @@ import { MatIconModule } from "@angular/material/icon";
     LayoutComponent,
     MainComponent,
     SidebarComponent,
+    AsistenciaComponent,
+    RecetasComponent,
+    HistorialComponent,
+    LaboratoriosComponent,
+    ConfiguracionesComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +46,8 @@ import { MatIconModule } from "@angular/material/icon";
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
+    MatListModule,
+    MatExpansionModule,
   ],
 })
 export class HomeModule {}

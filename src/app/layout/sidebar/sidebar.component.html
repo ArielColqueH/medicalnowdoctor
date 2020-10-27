@@ -1,1 +1,60 @@
-<p>sidebar works!</p>
+<mat-nav-list class="sidebar__list">
+  <div class="sidebar-brand">
+    <img [src]="mylogo" alt="UcbLogo" class="sidebar-brand__logo" />
+    <span class="sidebar-brand__subtitle">Medicalnow</span>
+  </div>
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="list-item-active-link"
+    routerLink="/asistencia"
+  >
+    <mat-icon class="link__icon">layers</mat-icon
+    ><span class="link__text">Asistencia</span>
+  </a>
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="list-item-active-link"
+    routerLink="/recetas"
+  >
+    <mat-icon class="link__icon">description</mat-icon
+    ><span class="link__text">Recetas Medicas</span>
+  </a>
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="list-item-active-link"
+    routerLink="/historial"
+  >
+    <mat-icon class="link__icon">book</mat-icon
+    ><span class="link__text">Historial Medico</span></a
+  >
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="list-item-active-link"
+    routerLink="/laboratorios"
+  >
+    <mat-icon class="link__icon">grain</mat-icon
+    ><span class="link__text">Laboratorios</span>
+  </a>
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="list-item-active-link"
+    routerLink="/configuraciones"
+  >
+    <mat-icon class="link__icon">settings</mat-icon
+    ><span class="link__text">Configuraciones</span>
+  </a>
+  <a
+    class="link"
+    mat-list-item
+    routerLinkActive="list-item-active-link"
+    routerLink="/salir"
+  >
+    <mat-icon class="link__icon">power_settings_new</mat-icon
+    ><span class="link__text">Salir</span>
+  </a>
+</mat-nav-list>

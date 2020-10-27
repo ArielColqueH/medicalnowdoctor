@@ -1,0 +1,57 @@
+//custom title usually for title/subtitle
+@mixin custom-title($margin, $font-size, $color) {
+  margin: $margin;
+  font-weight: $font-weight-light;
+  font-size: $font-size;
+  color: $color;
+  align-items: center;
+}
+
+//------------CENTER OBJECT ABSOLUTE--------------
+@mixin center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+//------------//CENTER OBJECT ABSOLUTE--------------
+//------------MARGIN LEFT RIGHT--------------
+@mixin margin-left-right($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+//------------//MARGIN LEFT RIGHT--------------
+
+//BREAKPOINTS
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 30em) {
+      // 480px/16=30
+      @content;
+    }
+  }
+  @if $breakpoint == tab-por {
+    @media (max-width: 55em) {
+      // 480px/16=30
+      @content;
+    }
+  }
+  @if $breakpoint == tab-lan {
+    @media (max-width: 64em) {
+      // 1024px /16 = 64
+      @content;
+    }
+  }
+  @if $breakpoint == normal {
+    @media (max-width: 75em) {
+      // 1200px /16 = 75
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 75.06em) {
+      // 1201/16=75.06
+      @content;
+    }
+  }
+}
