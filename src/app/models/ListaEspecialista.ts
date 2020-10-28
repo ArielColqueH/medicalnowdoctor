@@ -1,6 +1,6 @@
 export class ListEspecialist {
-  especialist_id: number;
-  especialist_avatar: string;
-  especialist_name: string;
-  especialist_score: number;
+  specialist_id: number;
+  specialist_avatar: string;
+  specialist_name: string;
+  specialist_score: number;
 }

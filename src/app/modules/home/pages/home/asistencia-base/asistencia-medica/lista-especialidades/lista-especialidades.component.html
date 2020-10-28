@@ -5,52 +5,25 @@
       <div class="title__row"></div>
     </div>
   </div>
-  <div fxLayout="row" class="mt-9" fxLayoutAlign="space-around center">
-    <div
-      fxFlex="30%"
-      class="card-lista-especialidades"
-      (click)="irListaEspecialistas()"
-    >
-      <div class="card-lista-especialidades__img">
-        <div class="card-lista-especialidades__img-overlay">
-          <div class="card-lista-especialidades__contenido">
-            <div class="card-lista-especialidades__detalle-numero">
-              <mat-icon
-                class="card-lista-especialidades__detalle-numero--icono"
-              >
-                people
-              </mat-icon>
-              <div class="card-lista-especialidades__detalle-numero--numero">
-                10
+  <div class="mt-9">
+    <div class="" *ngFor="let item of listaEspecialidades; let i = index">
+      <div class="card-lista-especialidades" (click)="irListaEspecialistas()">
+        <div class="card-lista-especialidades__img">
+          <div class="card-lista-especialidades__img-overlay">
+            <div class="card-lista-especialidades__contenido">
+              <div class="card-lista-especialidades__detalle-numero">
+                <mat-icon
+                  class="card-lista-especialidades__detalle-numero--icono"
+                >
+                  people
+                </mat-icon>
+                <div class="card-lista-especialidades__detalle-numero--numero">
+                  {{ item.specialist_total }}
+                </div>
               </div>
-            </div>
-            <div class="card-lista-especialidades__nombre-especialidad">
-              Dermatologia
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      fxFlex="30%"
-      class="card-lista-especialidades"
-      (click)="irListaEspecialistas()"
-    >
-      <div class="card-lista-especialidades__img">
-        <div class="card-lista-especialidades__img-overlay">
-          <div class="card-lista-especialidades__contenido">
-            <div class="card-lista-especialidades__detalle-numero">
-              <mat-icon
-                class="card-lista-especialidades__detalle-numero--icono"
-              >
-                people
-              </mat-icon>
-              <div class="card-lista-especialidades__detalle-numero--numero">
-                10
+              <div class="card-lista-especialidades__nombre-especialidad">
+                {{ item.specialty_name }}
               </div>
-            </div>
-            <div class="card-lista-especialidades__nombre-especialidad">
-              Dermatologia
             </div>
           </div>
         </div>
