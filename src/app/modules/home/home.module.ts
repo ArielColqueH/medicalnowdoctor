@@ -28,6 +28,7 @@ import { ListaEspecialidadesComponent } from "./pages/home/asistencia-base/asist
 import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialistas/lista-especialistas.component";
 import { RegistroComponent } from "./pages/registro/registro.component";
 import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { MatInputModule } from "@angular/material/input";
     ReactiveFormsModule,
     FlexLayoutModule,
     MatInputModule,
+    MatSelectModule,
   ],
 })
 export class HomeModule {}
