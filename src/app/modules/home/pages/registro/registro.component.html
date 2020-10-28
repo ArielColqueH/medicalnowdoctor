@@ -51,7 +51,7 @@
           [(ngModel)]="celular"
           name="celular"
         />
-        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+        <mat-icon matSuffix class="modal-container__icon">local_phone</mat-icon>
       </mat-form-field>
 
       <mat-form-field class="modal-container__inputs--width">
@@ -59,18 +59,18 @@
         <input
           class="input-form"
           matInput
-          placeholder="Numero de Celular"
+          placeholder="Fecha de nacimiento"
           [(ngModel)]="fechaNacimiento"
           name="fechaNacimiento"
         />
-        <mat-icon matSuffix class="modal-container__icon">local_phone</mat-icon>
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="modal-container__inputs--width">
         <mat-label>Ciudad</mat-label>
-        <mat-select [(ngModel)]="selectedValue" name="food">
+        <mat-select [(ngModel)]="selectedValueCombobox" name="food">
           <mat-option *ngFor="let ciudad of ciudad_combo" [value]="ciudad">
-            {{ ciudad.nombre_ciudad }}
+            {{ ciudad }}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -82,6 +82,7 @@
           matInput
           placeholder="ejemplo@ejemplo.com"
           name="correo"
+          [(ngModel)]="correo"
         />
         <mat-icon matSuffix class="modal-container__icon">email</mat-icon>
       </mat-form-field>
@@ -93,6 +94,9 @@
           matInput
           placeholder="**********"
           name="contrasenia"
+          [(ngModel)]="contrasenia"
+          type="password"
+          autocomplete="new-password"
         />
         <mat-icon matSuffix class="modal-container__icon">https</mat-icon>
       </mat-form-field>

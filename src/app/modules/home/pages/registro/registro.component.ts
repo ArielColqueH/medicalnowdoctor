@@ -2,9 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormControl, Validators } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material/core";
-interface Ciudad {
-  nombre_ciudad: string;
-}
 
 @Component({
   selector: "app-registro",
@@ -18,26 +15,28 @@ export class RegistroComponent implements OnInit {
   celular: string;
   ciudad: string;
   fechaNacimiento: string;
-  contraseña: string;
+  contrasenia: string;
+  correo: string;
   mylogo: string = "assets/images/Logo.png";
 
-  selectedValue: string;
+  selectedValueCombobox: string;
 
-  ciudad_combo: Ciudad[] = [
-    { nombre_ciudad: "La Paz" },
-    { nombre_ciudad: "Cochabamba" },
-    { nombre_ciudad: "Santa Cruz" },
-  ];
-
+  ciudad_combo: String[] = ["La Paz", "Cochabamba", "Santa Cruz"];
+  hide = true;
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {}
   registrarUsuario() {
     console.log("registrar");
+    console.log(this.nombre);
+    console.log(this.apellidoPaterno);
+    console.log(this.apellidoMaterno);
+    console.log(this.celular);
+    console.log(this.fechaNacimiento);
+    console.log(this.selectedValueCombobox);
+    console.log(this.correo);
+    console.log(this.contrasenia);
+
     this.router.navigate(["asistencia-medica"], { relativeTo: this.route });
   }
-  emailFormControl = new FormControl("", [
-    Validators.required,
-    Validators.email,
-  ]);
 }

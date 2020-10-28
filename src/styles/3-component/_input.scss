@@ -104,3 +104,6 @@ input[type="number"] {
     color: $color-primary-gray;
   }
 }
+.input:-internal-autofill-selected {
+  background-color: transparent !important;
+}
