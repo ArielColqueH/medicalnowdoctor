@@ -1,0 +1,48 @@
+.card-lista-especialidades {
+  @include custom-card-dinamic(30rem, 15rem, $color-primary-white);
+  margin-top: 2rem;
+  cursor: pointer;
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/images/dermatologia.jpg");
+    background-size: cover;
+    display: block;
+    position: relative;
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba($color-primary-gray, $opacity-custom-card);
+      color: $color-primary-white;
+    }
+  }
+  &__img-overlay {
+    padding: 2.25rem;
+  }
+  &__contenido {
+    height: 100%;
+    // background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__detalle-numero {
+    display: flex;
+    // background-color: green;
+    flex: 0 1 30%;
+    align-items: center;
+    &--icono {
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+  }
+  &__nombre-especialidad {
+    display: flex;
+    align-items: center;
+    // background-color: red;
+    flex: 0 1 30%;
+    font-size: 2rem;
+  }
+}

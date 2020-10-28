@@ -1,0 +1,10 @@
+.title {
+  &__text {
+    color: $color-primary-white;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  &__row {
+    border-bottom: 0.3rem solid $color-primary-white;
+  }
+}

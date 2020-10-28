@@ -21,7 +21,16 @@
   margin-right: $right;
 }
 //------------//MARGIN LEFT RIGHT--------------
-
+@mixin custom-card-dinamic($width, $height, $color) {
+  margin: 1rem 1rem 1rem 0;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  box-shadow: 0 0.5px 2rem rgba(0, 0, 0, 0.25);
+  border-radius: 3rem 3rem 3rem 3rem;
+  display: flex;
+  overflow: hidden;
+}
 //BREAKPOINTS
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {

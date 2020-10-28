@@ -1,0 +1,10 @@
+.avatar {
+  &__circle {
+    top: 4rem;
+    background-color: $color-primary-white !important;
+  }
+  &__first-word {
+    color: $color-primary-blue !important;
+    font-size: 2rem;
+  }
+}

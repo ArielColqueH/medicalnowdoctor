@@ -1,0 +1,38 @@
+.card {
+  background-color: green;
+}
+.card-asistencia {
+  //background-color: red;
+  margin: 2.5rem;
+  &__titulo {
+    font-size: 2rem;
+    color: $color-primary-white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+  &__container {
+    width: 20rem;
+    height: 20rem;
+    background-color: $color-primary-white;
+    border-radius: 2.5rem;
+    margin: 1rem;
+    box-shadow: $color-box-shadow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      transition: 0.5s;
+      background-color: lighten($color-primary-gray, 10);
+    }
+  }
+
+  &__logo {
+    //background-color: red;
+    width: 12.5rem;
+  }
+  &:hover {
+    transition: 1s;
+    transform: scale(1.1);
+  }
+}

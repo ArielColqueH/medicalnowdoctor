@@ -14,6 +14,14 @@ import {
   FlexStyleBuilder,
   ShowHideStyleBuilder,
   FlexOrderStyleBuilder,
+  FlexAlignDirective,
+  FlexAlignStyleBuilder,
+  DefaultFlexAlignDirective,
+  DefaultLayoutAlignDirective,
+  LayoutAlignDirective,
+  LayoutAlignStyleBuilder,
+  FlexFillDirective,
+  FlexFillStyleBuilder,
 } from "@angular/flex-layout";
 
 @NgModule({
@@ -30,6 +38,14 @@ import {
     FlexStyleBuilder,
     ShowHideStyleBuilder,
     FlexOrderStyleBuilder,
+    FlexAlignDirective,
+    FlexAlignStyleBuilder,
+    DefaultFlexAlignDirective,
+    DefaultLayoutAlignDirective,
+    LayoutAlignDirective,
+    LayoutAlignStyleBuilder,
+    FlexFillDirective,
+    FlexFillStyleBuilder,
   ],
   bootstrap: [AppComponent],
 })

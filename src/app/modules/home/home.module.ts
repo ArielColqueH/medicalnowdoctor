@@ -16,13 +16,16 @@ import { RouterModule } from "@angular/router";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatExpansionModule } from "@angular/material/expansion";
-import { AsistenciaComponent } from "./pages/home/asistencia/asistencia.component";
 import { RecetasComponent } from "./pages/home/recetas/recetas.component";
 import { HistorialComponent } from "./pages/home/historial/historial.component";
 import { LaboratoriosComponent } from "./pages/home/laboratorios/laboratorios.component";
 import { ConfiguracionesComponent } from "./pages/home/configuraciones/configuraciones.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { AsistenciaBaseComponent } from "./pages/home/asistencia-base/asistencia-base.component";
+import { AsistenciaComponent } from "./pages/home/asistencia-base/asistencia/asistencia.component";
+import { ListaEspecialidadesComponent } from "./pages/home/asistencia-base/lista-especialidades/lista-especialidades.component";
+import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/lista-especialistas/lista-especialistas.component";
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     HistorialComponent,
     LaboratoriosComponent,
     ConfiguracionesComponent,
+    AsistenciaBaseComponent,
+    ListaEspecialidadesComponent,
+    ListaEspecialistasComponent,
   ],
   imports: [
     CommonModule,

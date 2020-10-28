@@ -1,7 +1,10 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { MainComponent } from "./layout/main/main.component";
-import { AsistenciaComponent } from "./modules/home/pages/home/asistencia/asistencia.component";
+import { AsistenciaBaseComponent } from "./modules/home/pages/home/asistencia-base/asistencia-base.component";
+import { ListaEspecialidadesComponent } from "./modules/home/pages/home/asistencia-base/lista-especialidades/lista-especialidades.component";
+import { ListaEspecialistasComponent } from "./modules/home/pages/home/asistencia-base/lista-especialistas/lista-especialistas.component";
+import { AsistenciaComponent } from "./modules/home/pages/home/asistencia-base/asistencia/asistencia.component";
 import { ConfiguracionesComponent } from "./modules/home/pages/home/configuraciones/configuraciones.component";
 import { HistorialComponent } from "./modules/home/pages/home/historial/historial.component";
 import { HomeComponent } from "./modules/home/pages/home/home.component";
@@ -16,7 +19,21 @@ const routes: Routes = [
     children: [
       {
         path: "asistencia",
-        component: AsistenciaComponent,
+        component: AsistenciaBaseComponent,
+        children: [
+          {
+            path: "",
+            component: AsistenciaComponent,
+          },
+          {
+            path: "lista-especialidades",
+            component: ListaEspecialidadesComponent,
+          },
+          {
+            path: "lista-especialistas",
+            component: ListaEspecialistasComponent,
+          },
+        ],
       },
       {
         path: "recetas",

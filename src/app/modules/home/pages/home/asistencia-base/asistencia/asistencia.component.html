@@ -1,0 +1,38 @@
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">
+        Hola {{ nombrePaciente }} , en que te podemos ayudar
+      </div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxFlexFill
+    fxLayoutAlign="space-evenly center"
+    class="mt-9"
+  >
+    <div class="card-asistencia" (click)="irMedicoGeneral()">
+      <div class="card-asistencia__titulo">Medico General</div>
+      <div class="card-asistencia__container">
+        <img
+          [src]="medicoGeneralImage"
+          alt="doctor"
+          class="card-asistencia__logo"
+        />
+      </div>
+    </div>
+    <div class="card-asistencia" (click)="irMedicoEspecialista()">
+      <div class="card-asistencia__titulo">Especialistas</div>
+      <div class="card-asistencia__container">
+        <img
+          [src]="especialistaImage"
+          alt="doctor"
+          class="card-asistencia__logo"
+        />
+      </div>
+    </div>
+  </div>
+</div>

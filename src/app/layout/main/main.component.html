@@ -10,6 +10,14 @@
   </mat-drawer>
 
   <mat-drawer-content [ngStyle]="{ 'margin-left.rem': contentMargin }">
-    <router-outlet> </router-outlet>
+    <router-outlet>
+      <div class="container">
+        <div fxLayout="row" fxLayoutAlign="end">
+          <button class="avatar__circle" mat-fab>
+            <span class="avatar__first-word">M</span>
+          </button>
+        </div>
+      </div>
+    </router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

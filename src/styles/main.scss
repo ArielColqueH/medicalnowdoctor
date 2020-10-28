@@ -12,7 +12,11 @@
 //component : building pages which are independent and reusable everywhere across the website
 @import "3-component/buttons";
 @import "3-component/link";
-//4 - LAYOUT
+@import "3-component/title";
+@import "3-component/card-asistencia";
+@import "3-component/card-lista-especialidades";
+@import "3-component/margins";
+//4 - c
 //layout : header , footer ,sidebar, big portions of components
 @import "4-layout/sidebar";
 @import "4-layout/header";
