@@ -1,5 +1,5 @@
 .card-lista-especialidades {
-  @include custom-card-dinamic(30rem, 15rem, $color-primary-white);
+  @include custom-card-dinamic(40rem, 15rem, $color-primary-white);
   margin-top: 2rem;
   cursor: pointer;
   &:hover {

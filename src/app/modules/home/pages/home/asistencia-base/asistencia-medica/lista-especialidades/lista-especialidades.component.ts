@@ -7,7 +7,7 @@ import { ListaEspecialidades } from "src/app/models/ListaEspecialidades";
   styleUrls: ["./lista-especialidades.component.scss"],
 })
 export class ListaEspecialidadesComponent implements OnInit {
-  listaEspecialista: ListaEspecialidades[] = [
+  listaEspecialidades: ListaEspecialidades[] = [
     {
       specialty_id: 1,
       specialist_total: 20,
@@ -22,11 +22,6 @@ export class ListaEspecialidadesComponent implements OnInit {
       specialty_id: 3,
       specialist_total: 40,
       specialty_name: "Dentista",
-    },
-    {
-      specialty_id: 4,
-      specialist_total: 50,
-      specialty_name: "Otorrinolaringologo",
     },
   ];
 

@@ -6,26 +6,69 @@
     </div>
   </div>
   <div class="mt-9">
-    <div class="" *ngFor="let item of listaEspecialidades; let i = index">
-      <div class="card-lista-especialidades" (click)="irListaEspecialistas()">
-        <div class="card-lista-especialidades__img">
-          <div class="card-lista-especialidades__img-overlay">
-            <div class="card-lista-especialidades__contenido">
-              <div class="card-lista-especialidades__detalle-numero">
-                <mat-icon
-                  class="card-lista-especialidades__detalle-numero--icono"
-                >
-                  people
-                </mat-icon>
-                <div class="card-lista-especialidades__detalle-numero--numero">
-                  {{ item.specialist_total }}
+    <div fxLayout="row" fxLayoutAlign="space-evenly ">
+      <div fxLayout="column">
+        <div class="" *ngFor="let item of listaEspecialidades; let i = index">
+          <ng-container *ngIf="i % 2 == 0">
+            <div
+              class="card-lista-especialidades"
+              (click)="irListaEspecialistas()"
+            >
+              <div class="card-lista-especialidades__img">
+                <div class="card-lista-especialidades__img-overlay">
+                  <div class="card-lista-especialidades__contenido">
+                    <div class="card-lista-especialidades__detalle-numero">
+                      <mat-icon
+                        class="card-lista-especialidades__detalle-numero--icono"
+                      >
+                        people
+                      </mat-icon>
+                      <div
+                        class="card-lista-especialidades__detalle-numero--numero"
+                      >
+                        {{ item.specialist_total }}
+                      </div>
+                    </div>
+                    <div class="card-lista-especialidades__nombre-especialidad">
+                      {{ item.specialty_name }}
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="card-lista-especialidades__nombre-especialidad">
-                {{ item.specialty_name }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div fxLayout="column">
+        <div class="" *ngFor="let item of listaEspecialidades; let i = index">
+          <ng-container *ngIf="i % 2 == 1">
+            <div
+              class="card-lista-especialidades"
+              (click)="irListaEspecialistas()"
+            >
+              <div class="card-lista-especialidades__img">
+                <div class="card-lista-especialidades__img-overlay">
+                  <div class="card-lista-especialidades__contenido">
+                    <div class="card-lista-especialidades__detalle-numero">
+                      <mat-icon
+                        class="card-lista-especialidades__detalle-numero--icono"
+                      >
+                        people
+                      </mat-icon>
+                      <div
+                        class="card-lista-especialidades__detalle-numero--numero"
+                      >
+                        {{ item.specialist_total }}
+                      </div>
+                    </div>
+                    <div class="card-lista-especialidades__nombre-especialidad">
+                      {{ item.specialty_name }}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </ng-container>
         </div>
       </div>
     </div>
