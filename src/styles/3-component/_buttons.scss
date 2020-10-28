@@ -11,5 +11,6 @@
 .button {
   &__normal-button {
     background-color: $color-primary-blue !important;
+    border-radius: 2rem !important;
   }
 }

@@ -6,25 +6,31 @@
     </div>
   </div>
   <div class="mt-9">
-    <div class="card-lista-especialista">
-      <div class="card-lista-especialista__avatar">
-        <div class="card-lista-especialista__avatar--circle">
-          <div class="card-lista-especialista__avatar--first-word">A</div>
+    <div *ngFor="let item of listaEspecialista; let i = index">
+      <div class="card-lista-especialista">
+        <div class="card-lista-especialista__avatar">
+          <div class="card-lista-especialista__avatar--circle">
+            <div class="card-lista-especialista__avatar--first-word">
+              {{ item.especialist_avatar }}
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-lista-especialista__nombre-especialista">
-        Ariel Colque Herrera
-      </div>
-      <div class="card-lista-especialista__puntuacion">
-        <mat-icon class="card-lista-especialista__puntuacion--icon">
-          star
-        </mat-icon>
-        <div class="card-lista-especialista__puntuacion--puntuacion">
-          3.9 / 5
+        <div class="card-lista-especialista__nombre-especialista">
+          {{ item.especialist_name }}
         </div>
-      </div>
-      <div class="card-lista-especialista__button">
-        <button mat-flat-button class="button__normal-button">Solicitar</button>
+        <div class="card-lista-especialista__puntuacion">
+          <mat-icon class="card-lista-especialista__puntuacion--icon">
+            star
+          </mat-icon>
+          <div class="card-lista-especialista__puntuacion--puntuacion">
+            {{ item.especialist_score }}
+          </div>
+        </div>
+        <div class="card-lista-especialista__button">
+          <button mat-raised-button class="button__normal-button">
+            Solicitar
+          </button>
+        </div>
       </div>
     </div>
   </div>
