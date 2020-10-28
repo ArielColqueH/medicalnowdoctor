@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 @Component({
-  selector: "app-asistencia",
-  templateUrl: "./asistencia.component.html",
-  styleUrls: ["./asistencia.component.scss"],
+  selector: "app-asistencia-medica",
+  templateUrl: "./asistencia-medica.component.html",
+  styleUrls: ["./asistencia-medica.component.scss"],
 })
-export class AsistenciaComponent implements OnInit {
+export class AsistenciaMedicaComponent implements OnInit {
   medicoGeneralImage: string = "assets/images/doctor.png";
   especialistaImage: string = "assets/images/stethoscope.png";
   message: String = "link";

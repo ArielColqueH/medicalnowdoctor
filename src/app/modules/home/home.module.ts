@@ -23,9 +23,9 @@ import { ConfiguracionesComponent } from "./pages/home/configuraciones/configura
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AsistenciaBaseComponent } from "./pages/home/asistencia-base/asistencia-base.component";
-import { AsistenciaComponent } from "./pages/home/asistencia-base/asistencia/asistencia.component";
-import { ListaEspecialidadesComponent } from "./pages/home/asistencia-base/lista-especialidades/lista-especialidades.component";
-import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/lista-especialistas/lista-especialistas.component";
+import { AsistenciaMedicaComponent } from "./pages/home/asistencia-base/asistencia-medica/asistencia-medica.component";
+import { ListaEspecialidadesComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialidades.component";
+import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialistas/lista-especialistas.component";
 
 @NgModule({
   declarations: [
@@ -37,12 +37,12 @@ import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/lista-
     LayoutComponent,
     MainComponent,
     SidebarComponent,
-    AsistenciaComponent,
     RecetasComponent,
     HistorialComponent,
     LaboratoriosComponent,
     ConfiguracionesComponent,
     AsistenciaBaseComponent,
+    AsistenciaMedicaComponent,
     ListaEspecialidadesComponent,
     ListaEspecialistasComponent,
   ],

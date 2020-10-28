@@ -22,6 +22,8 @@ import {
   LayoutAlignStyleBuilder,
   FlexFillDirective,
   FlexFillStyleBuilder,
+  LayoutGapStyleBuilder,
+  LayoutGapDirective,
 } from "@angular/flex-layout";
 
 @NgModule({
@@ -46,6 +48,8 @@ import {
     LayoutAlignStyleBuilder,
     FlexFillDirective,
     FlexFillStyleBuilder,
+    LayoutGapStyleBuilder,
+    LayoutGapDirective,
   ],
   bootstrap: [AppComponent],
 })

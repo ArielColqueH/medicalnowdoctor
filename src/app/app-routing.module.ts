@@ -2,9 +2,10 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { MainComponent } from "./layout/main/main.component";
 import { AsistenciaBaseComponent } from "./modules/home/pages/home/asistencia-base/asistencia-base.component";
-import { ListaEspecialidadesComponent } from "./modules/home/pages/home/asistencia-base/lista-especialidades/lista-especialidades.component";
-import { ListaEspecialistasComponent } from "./modules/home/pages/home/asistencia-base/lista-especialistas/lista-especialistas.component";
-import { AsistenciaComponent } from "./modules/home/pages/home/asistencia-base/asistencia/asistencia.component";
+import { AsistenciaMedicaComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/asistencia-medica.component";
+import { ListaEspecialidadesComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialidades.component";
+import { ListaEspecialistasComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialistas/lista-especialistas.component";
+
 import { ConfiguracionesComponent } from "./modules/home/pages/home/configuraciones/configuraciones.component";
 import { HistorialComponent } from "./modules/home/pages/home/historial/historial.component";
 import { HomeComponent } from "./modules/home/pages/home/home.component";
@@ -18,20 +19,25 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: "asistencia",
+        path: "asistencia-medica",
         component: AsistenciaBaseComponent,
         children: [
           {
             path: "",
-            component: AsistenciaComponent,
+            component: AsistenciaMedicaComponent,
           },
           {
             path: "lista-especialidades",
-            component: ListaEspecialidadesComponent,
-          },
-          {
-            path: "lista-especialistas",
-            component: ListaEspecialistasComponent,
+            children: [
+              {
+                path: "",
+                component: ListaEspecialidadesComponent,
+              },
+              {
+                path: "lista-especialistas",
+                component: ListaEspecialistasComponent,
+              },
+            ],
           },
         ],
       },
