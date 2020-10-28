@@ -8,3 +8,8 @@
     font-size: 2rem;
   }
 }
+.button {
+  &__normal-button {
+    background-color: $color-primary-blue !important;
+  }
+}

@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     &:hover {
       transition: 0.5s;
       background-color: lighten($color-primary-gray, 10);
