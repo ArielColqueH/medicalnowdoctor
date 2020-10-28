@@ -1,0 +1,19 @@
+.brand-big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__subtitle {
+    //background-color: red;
+    transition: $transition-5;
+    display: flex;
+    //background-color: green;
+    font-size: 5rem;
+    flex: 1;
+    color: $color-primary-white;
+    font-family: "Rubik";
+    //@include custom-title(0rem, 2rem, $color-primary-white);
+  }
+  &__logo {
+    width: 35rem;
+  }
+}

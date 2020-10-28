@@ -26,6 +26,8 @@ import { AsistenciaBaseComponent } from "./pages/home/asistencia-base/asistencia
 import { AsistenciaMedicaComponent } from "./pages/home/asistencia-base/asistencia-medica/asistencia-medica.component";
 import { ListaEspecialidadesComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialidades.component";
 import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialistas/lista-especialistas.component";
+import { RegistroComponent } from "./pages/registro/registro.component";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/asiste
     AsistenciaMedicaComponent,
     ListaEspecialidadesComponent,
     ListaEspecialistasComponent,
+    RegistroComponent,
   ],
   imports: [
     CommonModule,
@@ -60,6 +63,7 @@ import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/asiste
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    MatInputModule,
   ],
 })
 export class HomeModule {}

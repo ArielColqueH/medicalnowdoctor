@@ -1,0 +1,106 @@
+// color input button
+
+// mat-icon-stepper selected color change
+// .mat-step-header .mat-step-icon-selected,
+// .mat-step-header .mat-step-icon-state-done,
+// .mat-step-header .mat-step-icon-state-edit {
+//   background-color: orange !important;
+// }
+
+// // mat-input error outline color
+// .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+//   .mat-form-field-outline-thick {
+//   color: orange !important;
+//   opacity: 0.8 !important;
+// }
+
+// // mat-input error caret color
+// .mat-form-field-invalid .mat-input-element,
+// .mat-warn .mat-input-element {
+//   caret-color: orange  !important;
+// }
+
+// mat-label normal state style hints
+// .mat-form-field-label {
+//   color: $color-secondary-blue !important;
+// }
+
+// mat-label error style
+// .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+//   color: orange!important;
+// }
+
+// input outline color input border
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $color-primary-white !important;
+}
+.input-disabled {
+  .mat-form-field-outline {
+    border-radius: 0.5rem;
+    background-color: $color-primary-gray;
+
+    // cursor: pointer!important;
+  }
+  &--date,
+  &--hour {
+    background-color: $color-primary-gray !important;
+    border-radius: 5px;
+  }
+}
+
+// mat-input focused color input border active
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $color-primary-white !important;
+  background-color: $color-primary-white;
+}
+
+// mat-input caret color |
+.mat-input-element {
+  caret-color: $color-primary-white !important;
+}
+
+// mat-label focused style input name over
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: $color-primary-white !important;
+  //background-color: $color-primary-white!important;
+}
+
+.input-form {
+  font-size: 1.8rem !important;
+}
+.input-minutes {
+  margin-left: 1rem;
+  color: $color-primary-white;
+  font-weight: bold;
+}
+.detail-minutes {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+//details input
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+.input--icon {
+  color: $color-primary-white;
+  font-weight: 500;
+}
+
+.mat-form-field.mat-focused {
+  .mat-form-field-label {
+    color: $color-primary-gray;
+  }
+  .mat-form-field-ripple {
+    background-color: $color-primary-gray;
+  }
+  .mat-form-field-required-marker {
+    color: $color-primary-gray;
+  }
+}

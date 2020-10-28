@@ -12,8 +12,13 @@ import { HomeComponent } from "./modules/home/pages/home/home.component";
 import { LaboratoriosComponent } from "./modules/home/pages/home/laboratorios/laboratorios.component";
 import { RecetasComponent } from "./modules/home/pages/home/recetas/recetas.component";
 import { LoginComponent } from "./modules/home/pages/login/login.component";
+import { RegistroComponent } from "./modules/home/pages/registro/registro.component";
 
 const routes: Routes = [
+  {
+    path: "",
+    component: RegistroComponent,
+  },
   {
     path: "",
     component: MainComponent,

@@ -13,4 +13,10 @@
     background-color: $color-primary-blue !important;
     border-radius: 2rem !important;
   }
+  &__large-button {
+    background-color: $color-primary-white !important;
+    color: $color-primary-blue;
+    border-radius: 2rem !important;
+    width: 25rem;
+  }
 }
