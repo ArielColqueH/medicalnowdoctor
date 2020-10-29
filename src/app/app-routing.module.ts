@@ -17,6 +17,10 @@ import { RegistroComponent } from "./modules/home/pages/registro/registro.compon
 const routes: Routes = [
   {
     path: "",
+    component: LoginComponent,
+  },
+  {
+    path: "registro",
     component: RegistroComponent,
   },
   {

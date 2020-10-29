@@ -1,1 +1,54 @@
-<p>login works!</p>
+<div class="utility-space-around">
+  <div class="brand-big">
+    <img [src]="mylogo" alt="medicalnowlogo" class="brand-big__logo" />
+    <span class="brand-big__subtitle">Medicalnow</span>
+  </div>
+  <div class="modal-container">
+    <div class="modal-container__titulo">Ingreso</div>
+    <form class="modal-container__inputs">
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Correo Electronico</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="ejemplo@ejemplo.com"
+          name="correo"
+          [(ngModel)]="correo"
+        />
+        <mat-icon matSuffix class="modal-container__icon">email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Contraseña</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="**********"
+          name="contrasenia"
+          [(ngModel)]="contrasenia"
+          type="password"
+          autocomplete="new-password"
+        />
+        <mat-icon matSuffix class="modal-container__icon">https</mat-icon>
+      </mat-form-field>
+    </form>
+
+    <div class="modal-container__button">
+      <button
+        mat-raised-button
+        class="button__large-button"
+        (click)="ingresar()"
+      >
+        Ingresar
+      </button>
+    </div>
+    <div class="modal-container__underline">
+      No tienes cuenta?
+      <span
+        class="modal-container__underline modal-container__underline--detail"
+        (click)="irRegistro()"
+        >Registrate Aqui</span
+      >
+    </div>
+  </div>
+</div>

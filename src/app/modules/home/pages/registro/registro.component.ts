@@ -32,4 +32,7 @@ export class RegistroComponent implements OnInit {
       }
     )
   }
+  irIngreso() {
+    this.router.navigate([""], { relativeTo: this.route });
+  }
 }
