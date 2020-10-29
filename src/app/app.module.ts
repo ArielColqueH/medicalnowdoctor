@@ -25,10 +25,11 @@ import {
   LayoutGapStyleBuilder,
   LayoutGapDirective,
 } from "@angular/flex-layout";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HomeModule],
+  imports: [BrowserModule, AppRoutingModule, HomeModule, BrowserAnimationsModule],
   providers: [
     StyleUtils,
     StylesheetMap,

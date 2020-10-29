@@ -18,7 +18,7 @@ export class RegistroComponent implements OnInit {
   user = new User();
 
 
-  constructor(private _service: RegistroService, private _router: Router) {}
+  constructor(private _service: RegistroService, private _router: Router, private route: ActivatedRoute) {}
   ngOnInit() {}
   registerUser() {
 
@@ -33,6 +33,6 @@ export class RegistroComponent implements OnInit {
     )
   }
   irIngreso() {
-    this.router.navigate([""], { relativeTo: this.route });
+    this._router.navigate([""], { relativeTo: this.route });
   }
 }
