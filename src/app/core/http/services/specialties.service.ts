@@ -9,7 +9,7 @@ import { SpecialtyModel } from 'src/app/models/specialty-model';
 export class SpecialtiesService {
 
   constructor(private  _http: HttpClient) { }
-  URL = "http://localhost:8080/listspecialties";
+  URL = "http://localhost:8080/api/v1/specialties";
 
   listaSpeciality(){
     return this._http.get<SpecialtyModel[]>(this.URL+"/");
