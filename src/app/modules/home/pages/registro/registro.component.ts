@@ -39,4 +39,7 @@ export class RegistroComponent implements OnInit {
 
     this.router.navigate(["asistencia-medica"], { relativeTo: this.route });
   }
+  irIngreso() {
+    this.router.navigate([""], { relativeTo: this.route });
+  }
 }

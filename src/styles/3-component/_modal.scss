@@ -28,4 +28,13 @@
   &__button {
     margin: 1rem 0;
   }
+  &__underline {
+    margin-top: 1rem;
+    color: $color-primary-white;
+    &--detail {
+      color: $color-primary-blue;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
 }
