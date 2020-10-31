@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
+import { MatDialog } from "@angular/material/dialog";
+import { MensajeAEspecialistaComponent } from "src/app/modules/dialogs/mensaje-a-especialista/mensaje-a-especialista.component";
 
 @Component({
   selector: "app-lista-especialistas",
@@ -22,7 +24,14 @@ export class ListaEspecialistasComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
+  openDialog() {
+    const dialogRef = this.dialog.open(MensajeAEspecialistaComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
