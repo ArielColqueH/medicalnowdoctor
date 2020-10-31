@@ -28,7 +28,9 @@ export class ListaEspecialistasComponent implements OnInit {
 
   ngOnInit() {}
   openDialog() {
-    const dialogRef = this.dialog.open(MensajeAEspecialistaComponent);
+    const dialogRef = this.dialog.open(MensajeAEspecialistaComponent, {
+      width: "600px",
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
