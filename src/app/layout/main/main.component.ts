@@ -22,4 +22,9 @@ export class MainComponent implements OnInit {
       this.contentMargin = 25; //css when it's open
     }
   }
+
+  signout(): void {
+    // this.servLoading.activar();
+    // this.tokenServ.signOut();
+  }
 }

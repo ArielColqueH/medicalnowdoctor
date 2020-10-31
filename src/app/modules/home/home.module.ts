@@ -1,6 +1,10 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { MatCardModule, MatSidenavModule } from "@angular/material";
+import {
+  MatCardModule,
+  MatMenuModule,
+  MatSidenavModule,
+} from "@angular/material";
 import { HeaderComponent } from "./../../layout/header/header.component";
 import { FooterComponent } from "./../../layout/footer/footer.component";
 import { DialogsComponent } from "./../../modules/dialogs/dialogs.component";
@@ -29,7 +33,7 @@ import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/asiste
 import { RegistroComponent } from "./pages/registro/registro.component";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -68,6 +72,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
+    MatMenuModule,
   ],
 })
 export class HomeModule {}

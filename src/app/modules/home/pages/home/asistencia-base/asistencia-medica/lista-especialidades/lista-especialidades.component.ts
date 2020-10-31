@@ -1,16 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
-import { RegistroService } from 'src/app/core/http/services/registro.service';
-import { SpecialtiesService } from 'src/app/core/http/services/specialties.service';
+import { RegistroService } from "src/app/core/http/services/registro.service";
+import { SpecialtiesService } from "src/app/core/http/services/specialties.service";
 import { ListaEspecialidades } from "src/app/models/ListaEspecialidades";
-import { SpecialtyModel } from 'src/app/models/specialty-model';
+import { SpecialtyModel } from "src/app/models/specialty-model";
 @Component({
   selector: "app-lista-especialidades",
   templateUrl: "./lista-especialidades.component.html",
   styleUrls: ["./lista-especialidades.component.scss"],
 })
 export class ListaEspecialidadesComponent implements OnInit {
- /* listaEspecialidades: ListaEspecialidades[] = [
+  /* listaEspecialidades: ListaEspecialidades[] = [
     {
       specialty_id: 1,
       specialist_total: 20,
@@ -28,20 +28,29 @@ export class ListaEspecialidadesComponent implements OnInit {
     },
   ];*/
 
-
   listaEspecialidades: SpecialtyModel[];
   aux: any;
 
-  constructor(private _service: SpecialtiesService, private _router: Router) {}
+  constructor(
+    private _service: SpecialtiesService,
+    private _router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.ObtenerDatos();
   }
 
-  ObtenerDatos(){
-    this._service.listaSpeciality().subscribe(
-      data => this.listaEspecialidades=data);
-      this.aux = this.listaEspecialidades;
+  ObtenerDatos() {
+    this._service
+      .listaSpeciality()
+      .subscribe((data) => (this.listaEspecialidades = data));
+    this.aux = this.listaEspecialidades;
   }
-  
+
+  irListaEspecialistas() {
+    this._router.navigate(["lista-especialistas"], {
+      relativeTo: this.route,
+    });
+  }
 }

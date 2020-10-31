@@ -13,9 +13,31 @@
     <router-outlet>
       <div class="container">
         <div fxLayout="row" fxLayoutAlign="end">
-          <button class="avatar__circle" mat-fab>
+          <button
+            class="avatar__circle"
+            mat-fab
+            [matMenuTriggerFor]="usermodal"
+          >
             <span class="avatar__first-word">M</span>
           </button>
+          <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
+            <div class="user-card__content">
+              <button class="user-card__icon" mat-fab>
+                <span class="user-card__first-word">M</span>
+              </button>
+              <span class="user-card__name">Mariana</span>
+              <span class="user-card__lastname"> Cardozo </span>
+              <span class="user-card__email"> Costas </span>
+              <button
+                mat-stroked-button
+                class="user-card__button-logout"
+                (click)="signout()"
+              >
+                <mat-icon>exit_to_app</mat-icon>
+                Sign out
+              </button>
+            </div>
+          </mat-menu>
         </div>
       </div>
     </router-outlet>
