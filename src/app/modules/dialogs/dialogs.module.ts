@@ -4,9 +4,10 @@ import { MensajeAEspecialistaComponent } from "./mensaje-a-especialista/mensaje-
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule, MatIconModule } from "@angular/material";
 import { MatInputModule } from "@angular/material/input";
+import { DetallePrescripcionComponent } from "./detalle-prescripcion/detalle-prescripcion.component";
 
 @NgModule({
-  declarations: [MensajeAEspecialistaComponent],
+  declarations: [MensajeAEspecialistaComponent, DetallePrescripcionComponent],
   imports: [
     CommonModule,
     MatDialogModule,
@@ -14,6 +15,9 @@ import { MatInputModule } from "@angular/material/input";
     MatButtonModule,
     MatInputModule,
   ],
-  entryComponents: [MensajeAEspecialistaComponent],
+  entryComponents: [
+    MensajeAEspecialistaComponent,
+    DetallePrescripcionComponent,
+  ],
 })
 export class DialogsModule {}

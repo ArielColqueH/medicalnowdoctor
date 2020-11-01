@@ -1,4 +1,4 @@
-.card-lista-laboratorios {
+.card-lista-prescripcion {
   &--row {
     background-color: $color-primary-white;
     display: flex;
@@ -22,7 +22,7 @@
     font-weight: bold;
   }
 
-  &__nombre-laboratorio {
+  &__nombre-diagnostico {
     //background-color: red;
     flex: 0 1 25%;
     text-align: center;
@@ -41,6 +41,6 @@
   &__fecha {
     //background-color: plum;
     flex: 0 1 15%;
-    text-align: right;
+    text-align: center;
   }
 }

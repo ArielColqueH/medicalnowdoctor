@@ -1,0 +1,37 @@
+.dialog__detalle-line {
+  color: $color-primary-blue;
+  border-bottom: 1px solid $color-primary-blue;
+}
+.dialog-prescripcion {
+  &--row {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: space-between;
+  }
+  &--header {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: space-between;
+    color: $color-primary-blue;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  //background-color: red;
+  &__nombre-producto {
+    //background-color: red;
+    flex: 0 1 40%;
+    text-align: center;
+    //font-weight: bold;
+  }
+  &__nombre-detalle {
+    //background-color: orange;
+    flex: 0 1 40%;
+    text-align: center;
+  }
+  &__nombre-cantidad {
+    //background-color: palegoldenrod;
+    flex: 0 1 20%;
+    text-align: center;
+  }
+}

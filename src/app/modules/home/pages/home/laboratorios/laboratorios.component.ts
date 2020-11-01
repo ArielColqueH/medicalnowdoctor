@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Laboratory } from "src/app/models/laboratory";
+import { Laboratory } from "src/app/models/Laboratory";
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
 
 @Component({
