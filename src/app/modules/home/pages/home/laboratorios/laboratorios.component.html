@@ -1,1 +1,45 @@
-<p>laboratorios works!</p>
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">Laboratorios</div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="mt-5">
+    <div class="card-lista-laboratorios card-lista-laboratorios--header">
+      <div class="card-lista-laboratorios__nombre-laboratorio">
+        Nombre Laboratorio
+      </div>
+      <div class="card-lista-laboratorios__nombre-doctor">Nombre de Doctor</div>
+      <div class="card-lista-laboratorios__nombre-especialista">
+        Nombre de Especialista
+      </div>
+      <div class="card-lista-laboratorios__fecha">Fecha</div>
+      <div class="card-lista-laboratorios__button">Accion</div>
+    </div>
+
+    <div *ngFor="let item of laboratoryList; let i = index">
+      <div class="card-lista-laboratorios card-lista-laboratorios--row">
+        <div class="card-lista-laboratorios__nombre-laboratorio">
+          {{ item.laboratoryName }}
+        </div>
+        <div class="card-lista-laboratorios__nombre-doctor">
+          {{ item.laboratoryDoctor }}
+        </div>
+        <div class="card-lista-laboratorios__nombre-especialista">
+          {{ item.laboratoryDoctorSpecialist }}
+        </div>
+        <div class="card-lista-laboratorios__fecha">
+          {{ item.laboratoryDate }}
+        </div>
+        <div class="card-lista-laboratorios__button">
+          <button mat-mini-fab class="button__normal-circle-button">
+            <mat-icon class="card-lista-laboratorios__puntuacion--icon">
+              file_download
+            </mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
