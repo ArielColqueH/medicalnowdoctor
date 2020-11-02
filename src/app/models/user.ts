@@ -1,13 +1,13 @@
 export class User {
-    idPaciente:number;
+    idNumber:number;
     firstName:string;
     firstSurname:string;
     secondSurname:number;
-    phoneNumber:number;
-    birthday:string;
+    birthDate:string;
     city: string;
     email: string;
     password: string;
+    phoneNumber:number;
     constructor(){
         
         }

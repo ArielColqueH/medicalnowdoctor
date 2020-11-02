@@ -32,7 +32,7 @@ export class ListaEspecialidadesComponent implements OnInit {
   listaEspecialidades: SpecialtyModel[];
   aux: any;
 
-  constructor(private _service: SpecialtiesService, private _router: Router) {}
+  constructor(private _service: SpecialtiesService, private _router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.ObtenerDatos();
@@ -42,6 +42,10 @@ export class ListaEspecialidadesComponent implements OnInit {
     this._service.listaSpeciality().subscribe(
       data => this.listaEspecialidades=data);
       this.aux = this.listaEspecialidades;
+  }
+
+  irListaEspecialistas(){
+    this._router.navigate(["lista-especialistas"], { relativeTo: this.route });
   }
   
 }
