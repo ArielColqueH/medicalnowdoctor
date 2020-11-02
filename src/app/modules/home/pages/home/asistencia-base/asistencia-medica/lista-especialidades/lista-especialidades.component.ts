@@ -29,7 +29,7 @@ export class ListaEspecialidadesComponent implements OnInit {
   ];*/
 
   listaEspecialidades: SpecialtyModel[];
-  aux: any;
+  //aux: any;
 
   constructor(private _service: SpecialtiesService, private _router: Router, private route: ActivatedRoute) {}
 
@@ -41,7 +41,7 @@ export class ListaEspecialidadesComponent implements OnInit {
     this._service
       .listaSpeciality()
       .subscribe((data) => (this.listaEspecialidades = data));
-    this.aux = this.listaEspecialidades;
+    //this.aux = this.listaEspecialidades;
   }
 
   irListaEspecialistas() {

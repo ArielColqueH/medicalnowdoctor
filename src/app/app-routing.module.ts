@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { AuthGuard } from "./core/auth/guards/auth.guard";
 import { MainComponent } from "./layout/main/main.component";
 import { AsistenciaBaseComponent } from "./modules/home/pages/home/asistencia-base/asistencia-base.component";
 import { AsistenciaMedicaComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/asistencia-medica.component";
@@ -15,9 +16,11 @@ import { LoginComponent } from "./modules/home/pages/login/login.component";
 import { RegistroComponent } from "./modules/home/pages/registro/registro.component";
 
 const routes: Routes = [
+  { path: "", pathMatch: "full", redirectTo: "/login" },
   {
-    path: "",
+    path: "login",
     component: LoginComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "registro",

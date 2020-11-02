@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormControl, Validators } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material/core";
-import { User } from 'src/app/models/user';
-import { RegistroService } from 'src/app/core/http/services/registro.service';
+import { User } from "src/app/models/user";
+import { RegistroService } from "src/app/core/http/services/registro.service";
 
 @Component({
   selector: "app-registro",
@@ -14,25 +14,27 @@ export class RegistroComponent implements OnInit {
   mylogo: string = "assets/images/Logo.png";
   
   ciudad_combo: String[] = ["La Paz", "Cochabamba", "Santa Cruz"];
-  
+
   user = new User();
 
-
-  constructor(private _service: RegistroService, private _router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private _service: RegistroService,
+    private _router: Router,
+    private route: ActivatedRoute
+  ) {}
   ngOnInit() {}
   registerUser() {
-
     this._service.conexionBackend(this.user).subscribe(
-      data=>{
+      (data) => {
         console.log("registrar");
         this._router.navigate(['/'])
       },
-      error =>{
+      (error) => {
         console.log("exception ocurred");
-      }git 
+      }
     )
   }
   irIngreso() {
-    this._router.navigate([""], { relativeTo: this.route });
+    this._router.navigate(["/login"], { relativeTo: this.route });
   }
 }
