@@ -26,11 +26,13 @@ export class TokenInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     if (this.authService.getJwtToken()) {
       request = this.addToken(request, this.authService.getJwtToken());
+      this.authService.refreshToken();
     }
-
+    //console.log("TOKEN !! : " + this.authService.getJwtToken());
     return next.handle(request).pipe(
       catchError((error) => {
         if (error instanceof HttpErrorResponse && error.status === 401) {
+          console.log("entro aqui");
           return this.handle401Error(request, next);
         } else {
           return throwError(error);
@@ -42,7 +44,8 @@ export class TokenInterceptor implements HttpInterceptor {
   private addToken(request: HttpRequest<any>, token: string) {
     return request.clone({
       setHeaders: {
-        Authorization: `Bearer ${token}`,
+        //Authorization: `bearer ${token}`,
+        Authorization: `bearer ${token}`,
       },
     });
   }

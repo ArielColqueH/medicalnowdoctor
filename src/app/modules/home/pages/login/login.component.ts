@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(["asistencia-medica"], { relativeTo: this.route });
   }
   irRegistro() {
-    this.router.navigate(["registro"], { relativeTo: this.route });
+    this.router.navigate(["registro"]);
   }
 
   get f() {
@@ -41,8 +41,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.f.email.value);
-    console.log(this.f.password.value);
     this.authService
       .login({
         email: this.f.email.value,

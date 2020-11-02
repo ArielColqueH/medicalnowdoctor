@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(user: { email: string; password: string }): Observable<boolean> {
-    return this.http.post<any>(`${config.apiUrl}/login`, user).pipe(
+    return this.http.post<any>(`${config.apiUrl}/security/login`, user).pipe(
       tap((tokens) => this.doLoginUser(user.email, tokens)),
       mapTo(true),
       catchError((error) => {
@@ -47,15 +47,33 @@ export class AuthService {
   }
 
   refreshToken() {
+    console.log("refrescando tokens");
+    //console.log("token refresh " + this.getRefreshToken());
+
     return this.http
-      .post<any>(`${config.apiUrl}/refresh`, {
+      .post<any>(`${config.apiUrl}/security/refresh`, {
         refreshToken: this.getRefreshToken(),
       })
       .pipe(
         tap((tokens: Tokens) => {
-          this.storeJwtToken(tokens.authentication);
+          this.storeTokens(tokens);
+          //console.log("token authentication : " + tokens.authentication);
+          console.log("Ambos tokens cambiados");
         })
       );
+
+    // return this.http
+    //   .post<any>(`${config.apiUrl}/security/refresh`, {
+    //     refreshToken: this.getRefreshToken(),
+    //   })
+    //   .pipe(
+    //     tap((tokens) => this.storeTokens(tokens)),
+    //     mapTo(true),
+    //     catchError((error) => {
+    //       alert(error.error);
+    //       return of(false);
+    //     })
+    //   );
   }
 
   getJwtToken() {
@@ -80,7 +98,7 @@ export class AuthService {
     localStorage.setItem(this.JWT_TOKEN, jwt);
   }
 
-  private storeTokens(tokens: Tokens) {
+  storeTokens(tokens: Tokens) {
     localStorage.setItem(this.JWT_TOKEN, tokens.authentication);
     localStorage.setItem(this.REFRESH_TOKEN, tokens.refresh);
   }

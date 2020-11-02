@@ -10,13 +10,12 @@ import {
   MatInputModule,
 } from "@angular/material";
 import { AuthGuard } from "./guards/auth.guard";
-import { LoginComponent } from "src/app/modules/home/pages/login/login.component";
 import { AuthService } from "./auth.service";
-import { TokenInterceptor } from "./toke.interceptor";
+import { TokenInterceptor } from "./token.service";
 import { RandomGuard } from "./guards/random.guard";
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [],
   providers: [
     AuthGuard,
     AuthService,

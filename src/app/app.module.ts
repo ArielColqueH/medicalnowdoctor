@@ -27,6 +27,11 @@ import {
 } from "@angular/flex-layout";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { DialogsModule } from "./modules/dialogs/dialogs.module";
+import { AuthService } from "./core/auth/auth.service";
+import { AuthGuard } from "./core/auth/guards/auth.guard";
+import { RandomGuard } from "./core/auth/guards/random.guard";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { TokenInterceptor } from "./core/auth/token.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +41,7 @@ import { DialogsModule } from "./modules/dialogs/dialogs.module";
     HomeModule,
     NoopAnimationsModule,
     DialogsModule,
+    HttpClientModule,
   ],
   providers: [
     StyleUtils,
@@ -58,6 +64,14 @@ import { DialogsModule } from "./modules/dialogs/dialogs.module";
     FlexFillStyleBuilder,
     LayoutGapStyleBuilder,
     LayoutGapDirective,
+    AuthGuard,
+    AuthService,
+    RandomGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
