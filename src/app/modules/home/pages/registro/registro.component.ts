@@ -27,12 +27,12 @@ export class RegistroComponent implements OnInit {
     this._service.conexionBackend(this.user).subscribe(
       (data) => {
         console.log("registrar");
-        this._router.navigate(["/home"]);
+        this._router.navigate(['/'])
       },
       (error) => {
         console.log("exception ocurred");
       }
-    );
+    )
   }
   irIngreso() {
     this._router.navigate(["/login"], { relativeTo: this.route });
