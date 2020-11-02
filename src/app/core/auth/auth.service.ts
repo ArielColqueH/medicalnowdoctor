@@ -58,8 +58,8 @@ export class AuthService {
       .pipe(
         tap((tokens: Tokens) => {
           this.storeTokens(tokens);
+          window.location.reload();
           //console.log("token authentication : " + tokens.authentication);
-          console.log("Ambos tokens cambiados");
         })
       );
 
