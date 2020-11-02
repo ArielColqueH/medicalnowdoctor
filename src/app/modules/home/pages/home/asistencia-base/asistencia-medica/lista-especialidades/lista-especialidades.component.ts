@@ -31,23 +31,27 @@ export class ListaEspecialidadesComponent implements OnInit {
   listaEspecialidades: SpecialtyModel[];
   //aux: any;
 
-  constructor(private _service: SpecialtiesService, private _router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private _service: SpecialtiesService,
+    private _router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.ObtenerDatos();
   }
 
   ObtenerDatos() {
-    this._service.listaSpeciality().subscribe(
-      (data) => (this.listaEspecialidades = data));
+    this._service
+      .listaSpeciality()
+      .subscribe((data) => (this.listaEspecialidades = data));
     //this.aux = this.listaEspecialidades;
   }
 
-  irListaEspecialistas(id) {
-    this._router.navigate(["lista-especialistas"], {
+  irListaEspecialistas(id: number) {
+    console.log(id);
+    this._router.navigate(["lista-especialistas/" + id], {
       relativeTo: this.route,
     });
   }
-
-  
 }

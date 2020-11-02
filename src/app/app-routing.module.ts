@@ -46,7 +46,7 @@ const routes: Routes = [
                 component: ListaEspecialidadesComponent,
               },
               {
-                path: "lista-especialistas",
+                path: "lista-especialistas/:id",
                 component: ListaEspecialistasComponent,
               },
             ],
