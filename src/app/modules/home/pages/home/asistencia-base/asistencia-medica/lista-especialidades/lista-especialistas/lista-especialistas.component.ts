@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
+import { SpecialtieslistService } from 'src/app/core/http/services/specialtieslist.service';
+import { DoctorSpecialtyModel } from 'src/app/models/doctor-specialty-model';
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
 import { MatDialog } from "@angular/material/dialog";
 import { MensajeAEspecialistaComponent } from "src/app/modules/dialogs/mensaje-a-especialista/mensaje-a-especialista.component";
@@ -9,7 +12,7 @@ import { MensajeAEspecialistaComponent } from "src/app/modules/dialogs/mensaje-a
   styleUrls: ["./lista-especialistas.component.scss"],
 })
 export class ListaEspecialistasComponent implements OnInit {
-  listaEspecialista: ListEspecialist[] = [
+  /*listaEspecialista: ListEspecialist[] = [
     {
       specialist_id: 1,
       specialist_avatar: "A",
@@ -22,18 +25,20 @@ export class ListaEspecialistasComponent implements OnInit {
       specialist_name: "Lizbeth vania Vera",
       specialist_score: 4.8,
     },
-  ];
+  ];*/
 
-  constructor(public dialog: MatDialog) {}
+  listaEspecialista:DoctorSpecialtyModel[];
+  aux: any;
 
-  ngOnInit() {}
-  openDialog() {
-    const dialogRef = this.dialog.open(MensajeAEspecialistaComponent, {
-      width: "600px",
-    });
+  constructor(private _service: SpecialtieslistService, private _router: Router) {}
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+  ngOnInit() {
+    this.ObtenerDatos();
+  }
+
+  ObtenerDatos(){
+    this._service.listSpecialties(localStorage.getItem("specialtyId")).subscribe(
+      data => this.listaEspecialista=data);
+      this.aux = this.listaEspecialista;
   }
 }

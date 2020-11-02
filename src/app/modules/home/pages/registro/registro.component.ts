@@ -12,7 +12,7 @@ import { RegistroService } from "src/app/core/http/services/registro.service";
 })
 export class RegistroComponent implements OnInit {
   mylogo: string = "assets/images/Logo.png";
-  selectedValueCombobox: string;
+  
   ciudad_combo: String[] = ["La Paz", "Cochabamba", "Santa Cruz"];
 
   user = new User();
