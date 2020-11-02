@@ -38,13 +38,12 @@ export class ListaEspecialidadesComponent implements OnInit {
   }
 
   ObtenerDatos() {
-    this._service
-      .listaSpeciality()
-      .subscribe((data) => (this.listaEspecialidades = data));
+    this._service.listaSpeciality().subscribe(
+      (data) => (this.listaEspecialidades = data));
     //this.aux = this.listaEspecialidades;
   }
 
-  irListaEspecialistas() {
+  irListaEspecialistas(id) {
     this._router.navigate(["lista-especialistas"], {
       relativeTo: this.route,
     });

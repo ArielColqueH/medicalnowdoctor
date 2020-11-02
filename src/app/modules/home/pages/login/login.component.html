@@ -5,7 +5,7 @@
   </div>
   <div class="modal-container">
     <div class="modal-container__titulo">Ingreso</div>
-    <form class="modal-container__inputs" [formGroup]="loginForm">
+    <form class="modal-container__inputs"  (ngSubmit)="login()">
       <mat-form-field class="modal-container__inputs--width">
         <mat-label>Correo Electronico</mat-label>
         <input
@@ -14,7 +14,7 @@
           matInput
           placeholder="ejemplo@ejemplo.com"
           name="correo"
-          formControlName="email"
+          [(ngModel)]="user.email"
         />
        
       </mat-form-field>
@@ -29,17 +29,19 @@
           type="password"
           autocomplete="new-password"
           id="password"
-          formControlName="password"
+          [(ngModel)]="user.password"
         />
-       
+       <!--formControlName="password"-->
       </mat-form-field>
+      <div class="modal-container__button">
+        <button mat-raised-button class="button__large-button" >
+          Ingresar
+        </button>
+      </div>
+
     </form>
 
-    <div class="modal-container__button">
-      <button mat-raised-button class="button__large-button" (click)="login()">
-        Ingresar
-      </button>
-    </div>
+    
     <div class="modal-container__underline">
       No tienes cuenta?
       <span

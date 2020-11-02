@@ -11,6 +11,6 @@ export class SpecialtieslistService {
   URL="http://localhost:8008/api/v1/specialties"
 
   listSpecialties(id){
-    return this._http.get<any>(this.URL+"/"+id);
+    return this._http.get<any>(this.URL);
   }
 }

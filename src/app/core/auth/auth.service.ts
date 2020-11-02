@@ -5,6 +5,7 @@ import { catchError, mapTo, tap } from "rxjs/operators";
 
 import { Tokens } from "src/app/models/auth/tokens";
 import { config } from "src/app/models/auth/config";
+import { User } from 'src/app/models/user';
 
 @Injectable({
   providedIn: "root",
@@ -16,7 +17,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(user: { email: string; password: string }): Observable<boolean> {
+  login(user: User): Observable<any> {
     return this.http.post<any>(`${config.apiUrl}/security/login`, user).pipe(
       tap((tokens) => this.doLoginUser(user.email, tokens)),
       mapTo(true),

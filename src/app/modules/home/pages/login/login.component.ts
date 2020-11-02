@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "src/app/core/auth/auth.service";
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: "app-login",
@@ -13,6 +14,9 @@ export class LoginComponent implements OnInit {
   contrasenia: string;
   correo: string;
   loginForm: FormGroup;
+
+  user = new User();
+  msg = '';
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -21,35 +25,31 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
+    /*this.loginForm = this.formBuilder.group({
       email: [""],
       password: [""],
     });
     this.correo = "";
-    this.contrasenia = "";
+    this.contrasenia = "";*/
   }
 
-  ingresar() {
-    this.router.navigate(["asistencia-medica"], { relativeTo: this.route });
-  }
   irRegistro() {
     this.router.navigate(["registro"]);
   }
 
-  get f() {
-    return this.loginForm.controls;
-  }
-
   login() {
     this.authService
-      .login({
-        email: this.f.email.value,
-        password: this.f.password.value,
-      })
-      .subscribe((success) => {
-        if (success) {
+      .login(this.user)
+      .subscribe(
+        data => {
+        localStorage.setItem("idUser",data);
+        console.log(data);
+        if (data) {
           this.router.navigate(["/asistencia-medica"]);
         }
-      });
+      },error =>{
+        console.log("exception ocurred");
+        this.msg = "Enter valid  email and password";
+       });
   }
 }
