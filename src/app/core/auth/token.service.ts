@@ -26,12 +26,17 @@ export class TokenInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     if (this.authService.getJwtToken()) {
       request = this.addToken(request, this.authService.getJwtToken());
-      this.authService.refreshToken();
     }
+
+    // if (this.isRefreshing == false) {
+    //   this.authService.refreshToken().subscribe((val) => {});
+    //   this.isRefreshing = true;
+    // }
+
     //console.log("TOKEN !! : " + this.authService.getJwtToken());
     return next.handle(request).pipe(
       catchError((error) => {
-        if (error instanceof HttpErrorResponse && error.status === 401) {
+        if (error instanceof HttpErrorResponse) {
           console.log("entro aqui");
           return this.handle401Error(request, next);
         } else {
