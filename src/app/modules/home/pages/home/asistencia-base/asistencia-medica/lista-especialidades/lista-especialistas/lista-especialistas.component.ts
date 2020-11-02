@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { SpecialtieslistService } from 'src/app/core/http/services/specialtieslist.service';
 import { DoctorSpecialtyModel } from 'src/app/models/doctor-specialty-model';
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
+import { MatDialog } from "@angular/material/dialog";
+import { MensajeAEspecialistaComponent } from "src/app/modules/dialogs/mensaje-a-especialista/mensaje-a-especialista.component";
 
 @Component({
   selector: "app-lista-especialistas",

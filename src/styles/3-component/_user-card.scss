@@ -1,0 +1,26 @@
+.user-card {
+  margin-top: 1.5rem;
+  //background-color: blue!important;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 3rem;
+  }
+  &__icon {
+    background-color: $color-primary-blue !important;
+    color: $color-primary-white !important;
+    margin-bottom: 1rem !important;
+  }
+  &__first-word {
+    color: $color-primary-white;
+    font-size: 2rem;
+    font-weight: $font-weight-regular;
+  }
+  &__button-logout {
+    margin-top: 1rem !important;
+    color: $color-primary-gray !important;
+    background-color: lighten($color-primary-gray, 40);
+  }
+}

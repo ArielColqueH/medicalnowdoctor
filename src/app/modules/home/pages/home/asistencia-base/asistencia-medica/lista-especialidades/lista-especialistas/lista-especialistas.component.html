@@ -5,7 +5,7 @@
       <div class="title__row"></div>
     </div>
   </div>
-  <div class="mt-9">
+  <div class="mt-7">
     <div *ngFor="let item of listaEspecialista; let i = index">
       <div class="card-lista-especialista">
         <div class="card-lista-especialista__avatar">
@@ -28,7 +28,11 @@
           </div>
         </div>
         <div class="card-lista-especialista__button">
-          <button mat-raised-button class="button__normal-button">
+          <button
+            mat-raised-button
+            class="button__normal-button"
+            (click)="openDialog()"
+          >
             Solicitar
           </button>
         </div>

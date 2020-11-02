@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-main",
   templateUrl: "./main.component.html",
@@ -8,7 +9,7 @@ import { Location } from "@angular/common";
 export class MainComponent implements OnInit {
   isSidebarOpen2: boolean = true;
   contentMargin = 25;
-  constructor(private _location: Location) {}
+  constructor(private _location: Location, private _router: Router) {}
   ngOnInit() {}
   receiveOpen(event) {
     this.isSidebarOpen2 = event;
@@ -21,5 +22,9 @@ export class MainComponent implements OnInit {
     } else {
       this.contentMargin = 25; //css when it's open
     }
+  }
+
+  signout(): void {
+    this._router.navigate(["/"]);
   }
 }

@@ -1,1 +1,131 @@
-<p>configuraciones works!</p>
+<div class="utility-center-horizontal">
+  <div class="modal-container">
+    <div class="modal-container__titulo">Configuracion</div>
+    <form class="modal-container__inputs">
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Nombre</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Nombre"
+          [(ngModel)]="user.firstName"
+          name="nombre"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Apellido Paterno</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Apellido Paterno"
+          [(ngModel)]="user.firstSurname"
+          name="apellidoPaterno"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Apellido Materno</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Apellido Materno"
+          [(ngModel)]="user.secondSurname"
+          name="apellidoMaterno"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Celular</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Numero de Celular"
+          [(ngModel)]="user.phoneNumber"
+          name="celular"
+        />
+        <mat-icon matSuffix class="modal-container__icon">local_phone</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Fecha de nacimiento"
+          [(ngModel)]="user.birthday"
+          name="fechaNacimiento"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Peso</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Peso"
+          name="peso"
+          type="number"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Altura</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="Altura"
+          name="altura"
+          type="number"
+        />
+        <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="modal-container__inputs--width">
+        <mat-label>Ciudad</mat-label>
+        <mat-select [(ngModel)]="selectedValueCombobox" name="food">
+          <mat-option *ngFor="let ciudad of ciudad_combo" [value]="ciudad">
+            {{ ciudad }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Correo Electronico</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="ejemplo@ejemplo.com"
+          name="correo"
+          [(ngModel)]="user.email"
+        />
+        <mat-icon matSuffix class="modal-container__icon">email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="modal-container__inputs--width">
+        <mat-label>Contraseña</mat-label>
+        <input
+          class="input-form"
+          matInput
+          placeholder="**********"
+          name="contrasenia"
+          [(ngModel)]="user.password"
+          type="password"
+          autocomplete="new-password"
+        />
+        <mat-icon matSuffix class="modal-container__icon">https</mat-icon>
+      </mat-form-field>
+    </form>
+
+    <div class="modal-container__button">
+      <button mat-raised-button class="button__large-button">
+        Guardar Datos
+      </button>
+    </div>
+  </div>
+</div>

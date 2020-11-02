@@ -1,9 +1,12 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { MatCardModule, MatSidenavModule } from "@angular/material";
+import {
+  MatCardModule,
+  MatMenuModule,
+  MatSidenavModule,
+} from "@angular/material";
 import { HeaderComponent } from "./../../layout/header/header.component";
 import { FooterComponent } from "./../../layout/footer/footer.component";
-import { DialogsComponent } from "./../../modules/dialogs/dialogs.component";
 import { LoginComponent } from "./../../modules/home/pages/login/login.component";
 import { HomeComponent } from "./../../modules/home/pages/home/home.component";
 import { LayoutComponent } from "./../../layout/layout.component";
@@ -29,14 +32,14 @@ import { ListaEspecialistasComponent } from "./pages/home/asistencia-base/asiste
 import { RegistroComponent } from "./pages/registro/registro.component";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from "@angular/common/http";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    DialogsComponent,
     LoginComponent,
     LayoutComponent,
     MainComponent,
@@ -68,6 +71,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
+    MatMenuModule,
+    MatDialogModule,
   ],
 })
 export class HomeModule {}

@@ -25,11 +25,18 @@ import {
   LayoutGapStyleBuilder,
   LayoutGapDirective,
 } from "@angular/flex-layout";
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { DialogsModule } from "./modules/dialogs/dialogs.module";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HomeModule, NoopAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HomeModule,
+    NoopAnimationsModule,
+    DialogsModule,
+  ],
   providers: [
     StyleUtils,
     StylesheetMap,
