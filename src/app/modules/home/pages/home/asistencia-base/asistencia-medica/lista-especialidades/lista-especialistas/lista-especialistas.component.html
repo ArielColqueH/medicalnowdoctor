@@ -11,13 +11,18 @@
         <div class="card-lista-especialista__avatar">
           <div class="card-lista-especialista__avatar--circle">
             <div class="card-lista-especialista__avatar--first-word">
-             <!-- {{ item.secondSurname }}-->
-             A
+             {{ item.firstLetter }}
             </div>
           </div>
         </div>
         <div class="card-lista-especialista__nombre-especialista">
           {{ item.firstName }}
+        </div>
+        <div class="card-lista-especialista__primerapellido-especialista">
+          {{ item.firstSurname }}
+        </div>
+        <div class="card-lista-especialista__segundoapellido-especialista">
+          {{ item.secondSurname }}
         </div>
         <div class="card-lista-especialista__puntuacion">
           <mat-icon class="card-lista-especialista__puntuacion--icon">
