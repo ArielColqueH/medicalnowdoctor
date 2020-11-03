@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
+//import { JwtHelperService } from "@auth0/angular-jwt";
+import { AuthService } from "src/app/core/auth/auth.service";
 @Component({
   selector: "app-asistencia-medica",
   templateUrl: "./asistencia-medica.component.html",
@@ -10,14 +12,23 @@ export class AsistenciaMedicaComponent implements OnInit {
   especialistaImage: string = "assets/images/stethoscope.png";
   message: String = "link";
   nombrePaciente: string = "Mariana";
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private _router: Router,
+    private route: ActivatedRoute,
 
-  ngOnInit() {}
+    private _service: AuthService
+  ) {}
+  ngOnInit() {
+    // if (this.jwtHelper.isTokenExpired(this._service.getJwtToken())) {
+    //   this._service.doLogoutUser();
+    //   this._router.navigate(["/login"]);
+    // }
+  }
   irMedicoGeneral() {
     console.log("medico general");
   }
   irMedicoEspecialista() {
     console.log("especialista");
-    this.router.navigate(["lista-especialidades"], { relativeTo: this.route });
+    this._router.navigate(["lista-especialidades"], { relativeTo: this.route });
   }
 }

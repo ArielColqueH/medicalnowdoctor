@@ -10,6 +10,7 @@ import {
 import { Observable, throwError, BehaviorSubject } from "rxjs";
 import { catchError, filter, take, switchMap } from "rxjs/operators";
 import { AuthService } from "./auth.service";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -18,7 +19,7 @@ export class TokenInterceptor implements HttpInterceptor {
     null
   );
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private _router: Router) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -38,8 +39,14 @@ export class TokenInterceptor implements HttpInterceptor {
       catchError((error) => {
         if (error instanceof HttpErrorResponse) {
           console.log("entro aqui");
+          if (this.authService.tokenExpired()) {
+            // token expired
+            this.authService.doLogoutUser();
+            this._router.navigate(["/login"]);
+          }
           return this.handle401Error(request, next);
         } else {
+          console.log("token expirado");
           return throwError(error);
         }
       })

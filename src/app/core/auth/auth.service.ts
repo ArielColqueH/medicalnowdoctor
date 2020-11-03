@@ -5,7 +5,8 @@ import { catchError, mapTo, tap } from "rxjs/operators";
 
 import { Tokens } from "src/app/models/auth/tokens";
 import { config } from "src/app/models/auth/config";
-import { User } from 'src/app/models/user';
+import { User } from "src/app/models/user";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root",
@@ -13,9 +14,11 @@ import { User } from 'src/app/models/user';
 export class AuthService {
   private readonly JWT_TOKEN = "JWT_TOKEN";
   private readonly REFRESH_TOKEN = "REFRESH_TOKEN";
+  private readonly USERID = "userId";
   private loggedUser: string;
+  tokenJWT: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(user: User): Observable<any> {
     return this.http.post<any>(`${config.apiUrl}/security/login`, user).pipe(
@@ -84,6 +87,8 @@ export class AuthService {
   private doLoginUser(username: string, tokens: Tokens) {
     this.loggedUser = username;
     this.storeTokens(tokens);
+    this.router.navigate(["/asistencia-medica/" + tokens.userId]);
+    localStorage.setItem("userId", tokens.userId.toString());
   }
 
   doLogoutUser() {
@@ -107,5 +112,12 @@ export class AuthService {
   removeTokens() {
     localStorage.removeItem(this.JWT_TOKEN);
     localStorage.removeItem(this.REFRESH_TOKEN);
+    localStorage.removeItem(this.USERID);
+  }
+
+  tokenExpired() {
+    this.tokenJWT = this.getJwtToken();
+    const expiry = JSON.parse(atob(this.tokenJWT.split(".")[1])).exp;
+    return Math.floor(new Date().getTime() / 1000) >= expiry;
   }
 }

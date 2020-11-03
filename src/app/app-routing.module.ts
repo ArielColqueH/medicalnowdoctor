@@ -8,7 +8,9 @@ import { ListaEspecialidadesComponent } from "./modules/home/pages/home/asistenc
 import { ListaEspecialistasComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialistas/lista-especialistas.component";
 
 import { ConfiguracionesComponent } from "./modules/home/pages/home/configuraciones/configuraciones.component";
-import { HistorialComponent } from "./modules/home/pages/home/historial/historial.component";
+import { HistorialBaseComponent } from "./modules/home/pages/home/historial-base/historial-base.component";
+import { HistorialCompletoComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-completo/historial-completo.component";
+import { HistorialListaComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-lista.component";
 import { HomeComponent } from "./modules/home/pages/home/home.component";
 import { LaboratoriosComponent } from "./modules/home/pages/home/laboratorios/laboratorios.component";
 import { RecetasComponent } from "./modules/home/pages/home/recetas/recetas.component";
@@ -31,7 +33,7 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: "asistencia-medica",
+        path: "asistencia-medica/:id",
         component: AsistenciaBaseComponent,
         children: [
           {
@@ -54,19 +56,39 @@ const routes: Routes = [
         ],
       },
       {
-        path: "recetas",
+        path: "recetas/:id",
         component: RecetasComponent,
       },
+      // {
+      //   path: "historial/:id",
+      //   component: HistorialListaComponent,
+      // },
       {
-        path: "historial",
-        component: HistorialComponent,
+        path: "historial/:id",
+        component: HistorialBaseComponent,
+        children: [
+          {
+            path: "",
+            component: HistorialListaComponent,
+          },
+          {
+            path: "historial-completo",
+            children: [
+              {
+                path: "",
+                component: HistorialCompletoComponent,
+              },
+            ],
+          },
+        ],
       },
+
       {
-        path: "laboratorios",
+        path: "laboratorios/:id",
         component: LaboratoriosComponent,
       },
       {
-        path: "configuraciones",
+        path: "configuraciones/:id",
         component: ConfiguracionesComponent,
       },
     ],

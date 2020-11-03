@@ -1,7 +1,9 @@
 <div class="container">
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
-      <div class="title__text">Especialistas de Pediatria</div>
+      <div class="title__text">
+        Especialistas de {{ listaEspecialista[0].specialtyName }}
+      </div>
       <div class="title__row"></div>
     </div>
   </div>
@@ -11,19 +13,14 @@
         <div class="card-lista-especialista__avatar">
           <div class="card-lista-especialista__avatar--circle">
             <div class="card-lista-especialista__avatar--first-word">
-             {{ item.firstLetter }}
+              {{ item.firstLetter }}
             </div>
           </div>
         </div>
         <div class="card-lista-especialista__nombre-especialista">
-          {{ item.firstName }}
+          {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
         </div>
-        <div class="card-lista-especialista__primerapellido-especialista">
-          {{ item.firstSurname }}
-        </div>
-        <div class="card-lista-especialista__segundoapellido-especialista">
-          {{ item.secondSurname }}
-        </div>
+
         <div class="card-lista-especialista__puntuacion">
           <mat-icon class="card-lista-especialista__puntuacion--icon">
             star

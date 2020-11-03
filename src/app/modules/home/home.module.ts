@@ -20,7 +20,6 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { RecetasComponent } from "./pages/home/recetas/recetas.component";
-import { HistorialComponent } from "./pages/home/historial/historial.component";
 import { LaboratoriosComponent } from "./pages/home/laboratorios/laboratorios.component";
 import { ConfiguracionesComponent } from "./pages/home/configuraciones/configuraciones.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -34,6 +33,9 @@ import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { HttpClientModule } from "@angular/common/http";
 import { MatDialogModule } from "@angular/material/dialog";
+import { HistorialBaseComponent } from "./pages/home/historial-base/historial-base.component";
+import { HistorialListaComponent } from "./pages/home/historial-base/historial-lista/historial-lista.component";
+import { HistorialCompletoComponent } from "./pages/home/historial-base/historial-lista/historial-completo/historial-completo.component";
 
 @NgModule({
   declarations: [
@@ -45,7 +47,6 @@ import { MatDialogModule } from "@angular/material/dialog";
     MainComponent,
     SidebarComponent,
     RecetasComponent,
-    HistorialComponent,
     LaboratoriosComponent,
     ConfiguracionesComponent,
     AsistenciaBaseComponent,
@@ -53,6 +54,9 @@ import { MatDialogModule } from "@angular/material/dialog";
     ListaEspecialidadesComponent,
     ListaEspecialistasComponent,
     RegistroComponent,
+    HistorialBaseComponent,
+    HistorialListaComponent,
+    HistorialCompletoComponent,
   ],
   imports: [
     CommonModule,

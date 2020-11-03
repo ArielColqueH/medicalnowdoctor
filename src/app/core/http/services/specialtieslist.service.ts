@@ -9,7 +9,8 @@ export class SpecialtieslistService {
 
   URL = "http://localhost:8008/api/v1/specialties";
 
-  listSpecialties(id) {
+  listSpecialties(id: string) {
+    console.log("id : " + id);
     return this._http.get<any>(this.URL + "/" + id);
   }
 }

@@ -29,7 +29,7 @@ export class ListaEspecialistasComponent implements OnInit {
 
   listaEspecialista: DoctorSpecialtyModel[];
   aux: any;
-  id = "";
+  id: string = "";
 
   constructor(
     private _service: SpecialtieslistService,
@@ -40,12 +40,12 @@ export class ListaEspecialistasComponent implements OnInit {
 
   ngOnInit() {
     this.ObtenerDatos();
-    this.id = this._route.snapshot.paramMap.get("id");
   }
 
   ObtenerDatos() {
+    console.log("id page : " + this._route.snapshot.paramMap.get("id"));
     this._service
-      .listSpecialties(this.id)
+      .listSpecialties(this._route.snapshot.paramMap.get("id"))
       .subscribe((data) => (this.listaEspecialista = data));
     this.aux = this.listaEspecialista;
   }
