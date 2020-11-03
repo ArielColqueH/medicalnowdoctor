@@ -54,19 +54,19 @@ const routes: Routes = [
         ],
       },
       {
-        path: "recetas",
+        path: "recetas/:id",
         component: RecetasComponent,
       },
       {
-        path: "historial",
+        path: "historial/:id",
         component: HistorialComponent,
       },
       {
-        path: "laboratorios",
+        path: "laboratorios/:id",
         component: LaboratoriosComponent,
       },
       {
-        path: "configuraciones",
+        path: "configuraciones/:id",
         component: ConfiguracionesComponent,
       },
     ],

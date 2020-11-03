@@ -37,8 +37,6 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.user).subscribe(
       (data) => {
-        //localStorage.setItem("userId", data.userId);
-
         if (data) {
           console.log("data : " + data);
           //this.router.navigate(["/asistencia-medica/" + data.userId]);

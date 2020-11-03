@@ -14,6 +14,7 @@ import { Router } from "@angular/router";
 export class AuthService {
   private readonly JWT_TOKEN = "JWT_TOKEN";
   private readonly REFRESH_TOKEN = "REFRESH_TOKEN";
+  private readonly USERID = "userId";
   private loggedUser: string;
   tokenJWT: string;
 
@@ -87,6 +88,7 @@ export class AuthService {
     this.loggedUser = username;
     this.storeTokens(tokens);
     this.router.navigate(["/asistencia-medica/" + tokens.userId]);
+    localStorage.setItem("userId", tokens.userId.toString());
   }
 
   doLogoutUser() {
@@ -110,6 +112,7 @@ export class AuthService {
   removeTokens() {
     localStorage.removeItem(this.JWT_TOKEN);
     localStorage.removeItem(this.REFRESH_TOKEN);
+    localStorage.removeItem(this.USERID);
   }
 
   tokenExpired() {
