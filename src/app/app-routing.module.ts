@@ -31,7 +31,7 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: "asistencia-medica",
+        path: "asistencia-medica/:id",
         component: AsistenciaBaseComponent,
         children: [
           {
