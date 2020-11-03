@@ -1,5 +1,5 @@
 export class DoctorSpecialtyModel {
-    firstLetter:string;
+    firstLetter:string; 
     doctorId:string;
     firstName:string;
     firstSurname:string;
