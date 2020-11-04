@@ -3,4 +3,5 @@ export class Avatar {
     userFirstSurname:string;
     userSecondSurname:string;
     firstLetter:string;
+    constructor() {}
 }

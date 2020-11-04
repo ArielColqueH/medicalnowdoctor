@@ -1,6 +1,6 @@
 .card-lista-laboratorios {
   &--row {
-    background-color: $color-primary-white;
+    background-color: darkgray;
     display: flex;
     border-radius: 50rem;
     margin: 2rem 0;
@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 1.8rem;
+  
   }
   &--header {
     background-color: transparent;
