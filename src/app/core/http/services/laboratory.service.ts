@@ -15,7 +15,7 @@ export class LaboratoryService {
       const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
-    return this._http.get<any>(`${config.apiUrl}/laboratory/4`, {
+    return this._http.get<any>(`${config.apiUrl}/laboratory/`+localStorage.getItem("userId"), {
       headers: reqHeader,
    });
   }

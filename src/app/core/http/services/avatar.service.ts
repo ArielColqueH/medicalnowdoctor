@@ -10,11 +10,12 @@ export class AvatarService {
   constructor(private _http: HttpClient) { }
 
   listAvatar(){
+    
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
     Authorization: "bearer " + tokenUser,
   });
-  return this._http.get<any>(`${config.apiUrl}/user/`, {
+  return this._http.get<any>(`${config.apiUrl}/user/`+localStorage.getItem("userId"), {
     headers: reqHeader,
  });
 }

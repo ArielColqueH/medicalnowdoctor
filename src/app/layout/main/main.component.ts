@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
   isSidebarOpen2: boolean = true;
   contentMargin = 25;
 
-  avatar: Avatar[];
+  avatar: Avatar;
   constructor(
     private _service: AvatarService,
     private _location: Location,
@@ -28,8 +28,8 @@ export class MainComponent implements OnInit {
   }
 
   ObtenerDatos() {
-  //  this._service.listLaboratory().subscribe(
-    //  (data) => (this.listAvatar = data));
+    this._service.listAvatar().subscribe(
+      (data) => (this.avatar = data));
     //this.aux = this.listaEspecialidades;
   }
 

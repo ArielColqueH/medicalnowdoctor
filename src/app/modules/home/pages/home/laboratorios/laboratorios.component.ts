@@ -12,7 +12,7 @@ import { ListEspecialist } from "src/app/models/ListaEspecialista";
 export class LaboratoriosComponent implements OnInit {
 
   listlaboratory: Laboratory[];
-
+  aux: any;
 
 
   /*laboratoryList: Laboratory[] = [
@@ -41,6 +41,6 @@ export class LaboratoriosComponent implements OnInit {
   ObtenerDatos() {
     this._service.listLaboratory().subscribe(
       (data) => (this.listlaboratory = data));
-    //this.aux = this.listaEspecialidades;
+      this.aux = this.listlaboratory;
   }
 }
