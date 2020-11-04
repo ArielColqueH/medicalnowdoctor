@@ -1,6 +1,6 @@
 export class Avatar {
-    userFirstName:string;
-    userFirstSurname:string;
-    userSecondSurname:string;
-    firstLetter:string;
+  userFirstName: string;
+  userFirstSurname: string;
+  userSecondSurname: string;
+  firstLetter: string;
 }
