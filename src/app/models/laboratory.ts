@@ -1,9 +1,10 @@
 export class Laboratory {
-  laboratoryId: number;
-  laboratoryName: string;
-  doctorFirstName: string;
-  doctorFirstsurname: string;
-  specialtyName: string;
+  laboratoryExamsId:string;
+  laboratoryName:string;
+  doctorFirstName:string;
+  doctorFirstSurname:string;
+  specialtyName:string;
   laboratoryOrderDate:string;
+  labExamOrder:string;
   constructor() {}
 }

@@ -1,10 +1,8 @@
 <div class="container">
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
-      <div class="title__text">
-        Especialistas de {{ listaEspecialista[0].specialtyName }}
-                            
-      </div>
+      <div class="title__text">Especialistas</div>
+
       <div class="title__row"></div>
     </div>
   </div>
@@ -19,7 +17,8 @@
           </div>
         </div>
         <div class="card-lista-especialista__nombre-especialista">
-          {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
+          {{ item.firstName }} {{ item.firstSurname }}
+          {{ item.secondSurname }}
         </div>
 
         <div class="card-lista-especialista__puntuacion">

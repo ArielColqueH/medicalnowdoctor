@@ -5,12 +5,13 @@
       <div class="title__row"></div>
     </div>
   </div>
-  <div class="mt-5">
+  <div class="mt-7">
     <div class="card-lista-laboratorios card-lista-laboratorios--header">
       <div class="card-lista-laboratorios__nombre-laboratorio">
         Nombre Laboratorio
       </div>
       <div class="card-lista-laboratorios__nombre-doctor">Nombre de Doctor</div>
+      <div class="card-lista-laboratorios__apellido-doctor">Apellido</div>
       <div class="card-lista-laboratorios__nombre-especialista">
         Nombre de Especialista
       </div>
@@ -24,6 +25,9 @@
         </div>
         <div class="card-lista-laboratorios__nombre-doctor">
           {{ item.doctorFirstName }}
+        </div>
+        <div class="card-lista-laboratorios__apellido-doctor">
+          {{ item.doctorFirstSurname }}
         </div>
         <div class="card-lista-laboratorios__nombre-especialista">
           {{ item.specialtyName }}

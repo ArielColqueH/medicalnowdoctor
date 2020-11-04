@@ -10,7 +10,7 @@ import { AvatarService } from "src/app/core/http/services/avatar.service";
   styleUrls: ["./main.component.scss"],
 })
 export class MainComponent implements OnInit {
-  avatar: Avatar;
+  avatar = new Avatar();
   constructor(
     private _service: AvatarService,
     private _location: Location,
@@ -23,7 +23,7 @@ export class MainComponent implements OnInit {
   ObtenerDatos() {
     this._service.listAvatar().subscribe((data) => (this.avatar = data));
     //this.aux = this.listaEspecialidades;
-    console.log("avatar : " + this.avatar);
+    //console.log("avatar : " + this.avatar);
   }
   signout(): void {
     this.authService.doLogoutUser();

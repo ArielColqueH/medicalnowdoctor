@@ -5,6 +5,7 @@ import { DoctorSpecialtyModel } from "src/app/models/doctor-specialty-model";
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
 import { MatDialog } from "@angular/material/dialog";
 import { MensajeAEspecialistaComponent } from "src/app/modules/dialogs/mensaje-a-especialista/mensaje-a-especialista.component";
+import { SpecialtyModel } from "src/app/models/specialty-model";
 
 @Component({
   selector: "app-lista-especialistas",
@@ -26,9 +27,9 @@ export class ListaEspecialistasComponent implements OnInit {
       specialist_score: 4.8,
     },
   ];*/
+  nombreEspecialidad: SpecialtyModel;
 
-  listaEspecialista: DoctorSpecialtyModel[];
-  aux: any;
+  listaEspecialista: DoctorSpecialtyModel[] = [];
   id: string = "";
 
   constructor(
@@ -39,15 +40,15 @@ export class ListaEspecialistasComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    //this.nombreEspecialidad = this.listaEspecialista[0].specialtyName;
     this.ObtenerDatos();
   }
 
   ObtenerDatos() {
-    console.log("id page : " + this._route.snapshot.paramMap.get("id"));
+    //console.log("id page : " + this._route.snapshot.paramMap.get("id"));
     this._service
       .listSpecialties(this._route.snapshot.paramMap.get("id"))
       .subscribe((data) => (this.listaEspecialista = data));
-    this.aux = this.listaEspecialista;
   }
   openDialog() {
     const dialogRef = this.dialog.open(MensajeAEspecialistaComponent, {
