@@ -1,3 +1,4 @@
+import { HostListener } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 //import { JwtHelperService } from "@auth0/angular-jwt";
@@ -30,5 +31,10 @@ export class AsistenciaMedicaComponent implements OnInit {
   irMedicoEspecialista() {
     console.log("especialista");
     this._router.navigate(["lista-especialidades"], { relativeTo: this.route });
+  }
+
+  @HostListener("window:beforeunload", ["$event"])
+  clearLocalStorage(event) {
+    localStorage.clear();
   }
 }

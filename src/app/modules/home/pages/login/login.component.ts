@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "src/app/core/auth/auth.service";
@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.authService.removeTokens();
     this._route.snapshot.paramMap.get("id");
   }
 
@@ -47,5 +48,10 @@ export class LoginComponent implements OnInit {
         this.msg = "Enter valid  email and password";
       }
     );
+  }
+
+  @HostListener("window:beforeunload", ["$event"])
+  clearLocalStorage(event) {
+    localStorage.clear();
   }
 }

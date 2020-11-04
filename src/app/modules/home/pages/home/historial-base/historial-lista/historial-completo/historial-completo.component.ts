@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { HostListener } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-historial-completo',
-  templateUrl: './historial-completo.component.html',
-  styleUrls: ['./historial-completo.component.scss']
+  selector: "app-historial-completo",
+  templateUrl: "./historial-completo.component.html",
+  styleUrls: ["./historial-completo.component.scss"],
 })
 export class HistorialCompletoComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  @HostListener("window:beforeunload", ["$event"])
+  clearLocalStorage(event) {
+    localStorage.clear();
   }
-
 }
