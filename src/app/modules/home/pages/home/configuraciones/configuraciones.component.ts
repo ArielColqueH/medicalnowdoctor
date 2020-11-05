@@ -12,6 +12,7 @@ export class ConfiguracionesComponent implements OnInit {
   ciudad_combo: String[] = ["La Paz", "Cochabamba", "Santa Cruz"];
   configuraciones: UserConfigurationModel[];
   aux: any;
+  datos = new UserConfigurationModel();
 
   constructor(
     private _service: UserConfigurationService,
@@ -32,5 +33,17 @@ export class ConfiguracionesComponent implements OnInit {
   @HostListener("window:beforeunload", ["$event"])
   clearLocalStorage(event) {
     localStorage.clear();
+  }
+
+  datosActualizados(){
+    this._service.datosActualizadosFromRemote(this.datos).subscribe(
+      (data) => {
+        console.log("actualizados");
+        this._router.navigate(['asistencia-medica/:id'])
+      },
+      (error) => {
+        console.log("exception ocurred");
+      }
+    )
   }
 }

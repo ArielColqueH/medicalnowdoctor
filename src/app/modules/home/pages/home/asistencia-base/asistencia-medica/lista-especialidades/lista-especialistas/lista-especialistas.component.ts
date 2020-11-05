@@ -5,7 +5,7 @@ import { DoctorSpecialtyModel } from "src/app/models/doctor-specialty-model";
 import { ListEspecialist } from "src/app/models/ListaEspecialista";
 import { MatDialog } from "@angular/material/dialog";
 import { MensajeAEspecialistaComponent } from "src/app/modules/dialogs/mensaje-a-especialista/mensaje-a-especialista.component";
-import { SpecialtyModel } from "src/app/models/specialty-model";
+import { SpecialtyModel } from 'src/app/models/specialty-model';
 
 @Component({
   selector: "app-lista-especialistas",
@@ -29,7 +29,9 @@ export class ListaEspecialistasComponent implements OnInit {
   ];*/
   nombreEspecialidad: SpecialtyModel;
 
-  listaEspecialista: DoctorSpecialtyModel[] = [];
+  listaEspecialista: DoctorSpecialtyModel[];
+  lista: SpecialtyModel;
+  aux: any;
   id: string = "";
 
   constructor(

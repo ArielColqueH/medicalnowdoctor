@@ -34,6 +34,9 @@ export class RegistroComponent implements OnInit {
       }
     )
   }
+
+
+  
   irIngreso() {
     this._router.navigate(["/login"], { relativeTo: this.route });
   }
