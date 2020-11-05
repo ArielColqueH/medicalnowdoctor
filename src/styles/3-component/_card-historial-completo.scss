@@ -29,4 +29,30 @@
       font-weight: bold;
     }
   }
+
+  &__chat {
+    margin: 1rem 0;
+    background-color: $color-primary-white;
+    border-radius: 2rem;
+    padding: 3rem 4rem;
+    box-shadow: $color-box-shadow;
+    width: 60%;
+    &--paciente {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &--doctor {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__usuario {
+    color: $color-primary-blue;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  &__chat-line {
+    border-bottom: 1px solid $color-primary-black;
+    margin: 1rem 0;
+  }
 }

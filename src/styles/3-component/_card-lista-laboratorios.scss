@@ -1,6 +1,6 @@
 .card-lista-laboratorios {
   &--row {
-    background-color: darkgray;
+    background-color: $color-primary-white;
     display: flex;
     border-radius: 50rem;
     margin: 2rem 0;
@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: space-between;
     font-size: 1.8rem;
-  
   }
   &--header {
     background-color: transparent;
@@ -31,17 +30,17 @@
   }
   &__nombre-doctor {
     //background-color: orange;
-    flex: 0 1 20%;
+    flex: 0 1 15%;
     text-align: center;
   }
   &__nombre-especialista {
     //background-color: palegoldenrod;
-    flex: 0 1 20%;
+    flex: 0 1 15%;
     text-align: center;
   }
   &__fecha {
     //background-color: plum;
     flex: 0 1 15%;
-    text-align: right;
+    text-align: center;
   }
 }

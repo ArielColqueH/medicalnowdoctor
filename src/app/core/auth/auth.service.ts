@@ -88,7 +88,6 @@ export class AuthService {
     this.loggedUser = username;
     this.storeTokens(tokens);
     this.router.navigate(["/asistencia-medica/" + tokens.userId]);
-    localStorage.setItem("userId", tokens.userId.toString());
   }
 
   doLogoutUser() {
@@ -107,6 +106,7 @@ export class AuthService {
   storeTokens(tokens: Tokens) {
     localStorage.setItem(this.JWT_TOKEN, tokens.authentication);
     localStorage.setItem(this.REFRESH_TOKEN, tokens.refresh);
+    localStorage.setItem("userId", tokens.userId.toString());
   }
 
   removeTokens() {

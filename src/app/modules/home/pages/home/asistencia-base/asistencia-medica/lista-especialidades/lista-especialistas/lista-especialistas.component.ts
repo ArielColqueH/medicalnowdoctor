@@ -27,6 +27,7 @@ export class ListaEspecialistasComponent implements OnInit {
       specialist_score: 4.8,
     },
   ];*/
+  nombreEspecialidad: SpecialtyModel;
 
   listaEspecialista: DoctorSpecialtyModel[];
   lista: SpecialtyModel;
@@ -41,15 +42,15 @@ export class ListaEspecialistasComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    //this.nombreEspecialidad = this.listaEspecialista[0].specialtyName;
     this.ObtenerDatos();
   }
 
   ObtenerDatos() {
-    console.log("id page : " + this._route.snapshot.paramMap.get("id"));
+    //console.log("id page : " + this._route.snapshot.paramMap.get("id"));
     this._service
       .listSpecialties(this._route.snapshot.paramMap.get("id"))
       .subscribe((data) => (this.listaEspecialista = data));
-    this.aux = this.listaEspecialista;
   }
   openDialog() {
     const dialogRef = this.dialog.open(MensajeAEspecialistaComponent, {

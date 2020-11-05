@@ -1,15 +1,9 @@
 <mat-drawer-container>
-  <mat-drawer
-    class="sidebar"
-    mode="side"
-    [class.menu-open]="isSidebarOpen2"
-    [class.menu-close]="!isSidebarOpen2"
-    opened
-  >
-    <app-sidebar (openEvent)="receiveOpen($event)"></app-sidebar>
+  <mat-drawer class="sidebar" mode="side" opened>
+    <app-sidebar></app-sidebar>
   </mat-drawer>
 
-  <mat-drawer-content [ngStyle]="{ 'margin-left.rem': contentMargin }">
+  <mat-drawer-content>
     <router-outlet>
       <div class="container">
         <div fxLayout="row" fxLayoutAlign="end">
@@ -18,16 +12,26 @@
             mat-fab
             [matMenuTriggerFor]="usermodal"
           >
+<<<<<<< HEAD
           <span  class="avatar__first-word">M</span>
+=======
+            <span class="avatar__first-word">{{ avatar.firstLetter }}</span>
+>>>>>>> ca600d1bee620c9b9b908a497a910c409af94026
           </button>
           <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
             <div class="user-card__content">
               <button class="user-card__icon" mat-fab>
-          <span class="user-card__first-word">M</span>
+                <span class="user-card__first-word">{{
+                  avatar.firstLetter
+                }}</span>
               </button>
-              <span class="user-card__name">Mariana</span>
-              <span class="user-card__lastname"> cardozo </span>
-              <span class="user-card__email"> costa </span>
+              <span class="user-card__name">{{ avatar.userFirstName }}</span>
+              <span class="user-card__lastname">
+                {{ avatar.userFirstSurname }}
+              </span>
+              <span class="user-card__email">
+                {{ avatar.userSecondSurname }}
+              </span>
               <button
                 mat-stroked-button
                 class="user-card__button-logout"
