@@ -12,8 +12,8 @@ import { AvatarService } from 'src/app/core/http/services/avatar.service';
 export class MainComponent implements OnInit {
   isSidebarOpen2: boolean = true;
   contentMargin = 25;
-
-  avatar: Avatar;
+  aux: any;
+  avatar: Avatar[];
   constructor(
     private _service: AvatarService,
     private _location: Location,
@@ -29,8 +29,8 @@ export class MainComponent implements OnInit {
 
   ObtenerDatos() {
     this._service.listAvatar().subscribe(
-      (data) => (this.avatar = data));
-    //this.aux = this.listaEspecialidades;
+      data => this.avatar=data);
+      this.aux = this.avatar; 
   }
 
   signout(): void {

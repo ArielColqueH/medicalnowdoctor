@@ -1,8 +1,9 @@
 export class DoctorSpecialtyModel {
-    firstLetter:string; 
-    doctorId:string;
+    firstLetter:string;
     firstName:string;
     firstSurname:string;
     secondSurname:string;
+    specialtyName:string;
     qualification:string;
+    doctorId:number;
 }
