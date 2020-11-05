@@ -19,7 +19,19 @@
       <div class="dialog__subtitle-content">
         <div class="dialog__subtitle-text">Recursos</div>
         <div class="dialog__subtitle-button">
-          <button mat-mini-fab class="dialog__circle-button">
+          <input
+            #csvInput
+            hidden="true"
+            type="file"
+            onclick="this.value=null"
+            accept=".png,.jpg"
+            (change)="handleFileInput($event.target.files)"
+          />
+          <button
+            mat-mini-fab
+            class="dialog__circle-button"
+            (click)="csvInput.click()"
+          >
             <mat-icon>add</mat-icon>
           </button>
         </div>
@@ -33,7 +45,7 @@
           >description</mat-icon
         >
 
-        <div class="dialog__resources-text">Archive.pdf</div>
+        <div class="dialog__resources-text">{{ nombre }}</div>
       </div>
       <div class="dialog__resources-delete">
         <div class="button__circle button__circle--delete">
