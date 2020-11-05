@@ -14,7 +14,7 @@ export class AvatarService {
     const reqHeader = new HttpHeaders({
     Authorization: "bearer " + tokenUser,
   });
-  return this._http.get<Avatar[]>(`${config.apiUrl}/user/`+localStorage.getItem("userId"), {
+  return this._http.get<any>(`${config.apiUrl}/user/`+localStorage.getItem("userId"), {
     headers: reqHeader,
  });
 }

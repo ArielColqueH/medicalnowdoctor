@@ -39,7 +39,7 @@ export class ConfiguracionesComponent implements OnInit {
     this._service.datosActualizadosFromRemote(this.datos).subscribe(
       (data) => {
         console.log("actualizados");
-        this._router.navigate(['asistencia-medica/:id'])
+        
       },
       (error) => {
         console.log("exception ocurred");

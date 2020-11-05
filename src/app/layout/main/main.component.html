@@ -12,11 +12,9 @@
             mat-fab
             [matMenuTriggerFor]="usermodal"
           >
-<<<<<<< HEAD
-          <span  class="avatar__first-word">M</span>
-=======
-            <span class="avatar__first-word">{{ avatar.firstLetter }}</span>
->>>>>>> ca600d1bee620c9b9b908a497a910c409af94026
+          <span  class="avatar__first-word">{{
+            avatar.firstLetter
+          }}</span>
           </button>
           <mat-menu class="user-card" #usermodal="matMenu" xPosition="before">
             <div class="user-card__content">

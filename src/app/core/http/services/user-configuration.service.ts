@@ -26,7 +26,7 @@ export class UserConfigurationService {
     const reqHeader = new HttpHeaders({
     Authorization: "bearer " + tokenUser,
   });
-    return this._http.post<UserConfigurationModel>(`${config.apiUrl}/user/config/update/`+localStorage.getItem("userId"),{
+    return this._http.put(`${config.apiUrl}/user/config/update/`+localStorage.getItem("userId"),{
       headers: reqHeader,
     });
   }
