@@ -25,13 +25,14 @@ import {
   LayoutGapStyleBuilder,
   LayoutGapDirective,
 } from "@angular/flex-layout";
-import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+
 import { DialogsModule } from "./modules/dialogs/dialogs.module";
 import { AuthService } from "./core/auth/auth.service";
 import { AuthGuard } from "./core/auth/guards/auth.guard";
 import { RandomGuard } from "./core/auth/guards/random.guard";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptor } from "./core/auth/token.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,9 +40,9 @@ import { TokenInterceptor } from "./core/auth/token.service";
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    NoopAnimationsModule,
     DialogsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     StyleUtils,

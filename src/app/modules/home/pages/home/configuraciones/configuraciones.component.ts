@@ -30,10 +30,7 @@ export class ConfiguracionesComponent implements OnInit {
     this.aux = this.configuraciones;
   }
 
-  @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
-  }
+ 
 
   datosActualizados(){
     this._service.datosActualizadosFromRemote(this.datos).subscribe(
@@ -46,4 +43,9 @@ export class ConfiguracionesComponent implements OnInit {
       }
     )
   }
+
+ /* @HostListener("window:beforeunload", ["$event"])
+  clearLocalStorage(event) {
+    localStorage.clear();
+  }*/
 }
