@@ -10,14 +10,10 @@ import { AvatarService } from "src/app/core/http/services/avatar.service";
   styleUrls: ["./main.component.scss"],
 })
 export class MainComponent implements OnInit {
-<<<<<<< HEAD
   isSidebarOpen2: boolean = true;
   contentMargin = 25;
   aux: any;
   avatar: Avatar[];
-=======
-  avatar = new Avatar();
->>>>>>> ca600d1bee620c9b9b908a497a910c409af94026
   constructor(
     private _service: AvatarService,
     private _location: Location,
@@ -28,15 +24,8 @@ export class MainComponent implements OnInit {
     this.ObtenerDatos();
   }
   ObtenerDatos() {
-<<<<<<< HEAD
-    this._service.listAvatar().subscribe(
-      data => this.avatar=data);
-      this.aux = this.avatar; 
-=======
     this._service.listAvatar().subscribe((data) => (this.avatar = data));
-    //this.aux = this.listaEspecialidades;
-    //console.log("avatar : " + this.avatar);
->>>>>>> ca600d1bee620c9b9b908a497a910c409af94026
+    this.aux = this.avatar;
   }
   signout(): void {
     this.authService.doLogoutUser();
