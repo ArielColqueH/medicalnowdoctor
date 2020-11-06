@@ -1,0 +1,85 @@
+<div class="container">
+  <button
+    (click)="openDialog()"
+    mat-fab
+    class="dialog__circle-button dialog__circle-button--absolute"
+  >
+    <mat-icon>chat</mat-icon>
+  </button>
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">Consultas individuales</div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="card-historial-completo__titulo">* Seguimiento</div>
+  <div class="card-historial-completo__chat--paciente">
+    <div class="card-historial-completo__chat">
+      <div class="card-historial-completo__usuario">Paciente</div>
+      <span class="card-historial-completo__informacion--subtitulo">
+        Mensaje :
+      </span>
+      <div class="card-historial-completo__informacion--diagnostico">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat.
+      </div>
+      <div class="card-historial-completo__chat-line"></div>
+
+      <span class="card-historial-completo__informacion--subtitulo">
+        Recursos :
+      </span>
+      <div class="dialog__resources-container">
+        <div class="dialog__resources-element">
+          <mat-icon class="dialog__resources-icon dialog__resources-icon--right"
+            >description</mat-icon
+          >
+
+          <div class="dialog__resources-text">Archive.pdf</div>
+        </div>
+        <div class="dialog__resources-delete">
+          <div class="button__circle button__circle--download">
+            <mat-icon
+              class="dialog__resources-icon dialog__resources-icon--center"
+              >file_download</mat-icon
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-historial-completo__chat--doctor">
+    <div class="card-historial-completo__chat">
+      <div class="card-historial-completo__usuario">Doctor</div>
+      <span class="card-historial-completo__informacion--subtitulo">
+        Mensaje :
+      </span>
+      <div class="card-historial-completo__informacion--diagnostico">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+        laudantium quasi aliquid quos ad, suscipit, doloribus quaerat.
+      </div>
+      <div class="card-historial-completo__chat-line"></div>
+
+      <span class="card-historial-completo__informacion--subtitulo">
+        Recursos :
+      </span>
+      <div class="dialog__resources-container">
+        <div class="dialog__resources-element">
+          <mat-icon class="dialog__resources-icon dialog__resources-icon--right"
+            >description</mat-icon
+          >
+
+          <div class="dialog__resources-text">Archive.pdf</div>
+        </div>
+        <div class="dialog__resources-delete">
+          <div class="button__circle button__circle--download">
+            <mat-icon
+              class="dialog__resources-icon dialog__resources-icon--center"
+              >file_download</mat-icon
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

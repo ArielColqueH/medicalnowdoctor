@@ -1,4 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit } from "@angular/core";
+
+export interface MensajeChat {
+  mensaje: string;
+  contenido: string[];
+}
 
 @Component({
   selector: "app-mensaje-a-especialista",
@@ -11,6 +16,12 @@ export class MensajeAEspecialistaComponent implements OnInit {
   Url: string = "";
   tipoArchivo: string = "";
   nombreArchivo: string = "";
+
+  mensajeChat: MensajeChat = {
+    mensaje: "mensaje de texto",
+    contenido: ["ariel.png", "andrea.png"],
+  };
+
   constructor() {}
 
   ngOnInit() {}

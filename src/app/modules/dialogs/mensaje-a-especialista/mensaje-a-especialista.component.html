@@ -11,7 +11,12 @@
     <form class="dialog__form">
       <mat-form-field class="dialog__form--width">
         <mat-label>Mensaje ...</mat-label>
-        <textarea matInput placeholder="Doctor , me duele ..."></textarea>
+        <textarea
+          matInput
+          placeholder="Doctor , me duele ..."
+          name="message"
+          [(ngModel)]="mensajeChat.mensaje"
+        ></textarea>
       </mat-form-field>
     </form>
 
@@ -38,21 +43,22 @@
       </div>
       <div class="dialog__subtitle-line"></div>
     </div>
-
-    <div class="dialog__resources-container">
-      <div class="dialog__resources-element">
-        <mat-icon class="dialog__resources-icon dialog__resources-icon--right"
-          >description</mat-icon
-        >
-
-        <div class="dialog__resources-text">{{ nombreArchivo }}</div>
-      </div>
-      <div class="dialog__resources-delete">
-        <div class="button__circle button__circle--delete">
-          <mat-icon
-            class="dialog__resources-icon dialog__resources-icon--center"
-            >close</mat-icon
+    <div class="" *ngFor="let item of mensajeChat.contenido; let i = index">
+      <div class="dialog__resources-container">
+        <div class="dialog__resources-element">
+          <mat-icon class="dialog__resources-icon dialog__resources-icon--right"
+            >image</mat-icon
           >
+
+          <div class="dialog__resources-text">{{ item }}</div>
+        </div>
+        <div class="dialog__resources-delete">
+          <div class="button__circle button__circle--delete">
+            <mat-icon
+              class="dialog__resources-icon dialog__resources-icon--center"
+              >close</mat-icon
+            >
+          </div>
         </div>
       </div>
     </div>

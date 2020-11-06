@@ -60,9 +60,4 @@ export class ListaEspecialistasComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-
-  @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
-  }
 }

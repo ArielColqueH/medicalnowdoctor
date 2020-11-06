@@ -14,8 +14,4 @@ export class HistorialListaComponent implements OnInit {
   irHistorialGeneral() {
     this._router.navigate(["historial-completo"], { relativeTo: this.route });
   }
-  @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
-  }
 }

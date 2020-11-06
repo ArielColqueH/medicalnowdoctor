@@ -22,6 +22,12 @@
   }
 }
 .dialog__circle-button {
+  &--absolute {
+    position: absolute !important;
+    right: 0;
+    bottom: 0;
+    margin: 5rem !important;
+  }
   background-color: $color-primary-blue !important;
 }
 .button__circle {

@@ -43,8 +43,4 @@ export class LaboratoriosComponent implements OnInit {
       .subscribe((data) => (this.listlaboratory = data));
     this.aux = this.listlaboratory;
   }
-  @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
-  }
 }
