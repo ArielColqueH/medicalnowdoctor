@@ -25,9 +25,9 @@ export class ConfiguracionesComponent implements OnInit {
   }
 
   Obtenerdatos() {
-    this._service
-      .obtenerDatosConfiguration()
-      .subscribe((data) => (this.usuario = data));
+    // this._service
+    //   .obtenerDatosConfiguration()
+    //   .subscribe((data) => (this.usuario = data));
   }
 
   datosActualizados() {
@@ -40,9 +40,4 @@ export class ConfiguracionesComponent implements OnInit {
     //   }
     // )
   }
-
-  /* @HostListener("window:beforeunload", ["$event"])
-  clearLocalStorage(event) {
-    localStorage.clear();
-  }*/
 }

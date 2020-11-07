@@ -38,9 +38,9 @@ export class LaboratoriosComponent implements OnInit {
   }
 
   ObtenerDatos() {
-    this._service
-      .listLaboratory()
-      .subscribe((data) => (this.listlaboratory = data));
-    this.aux = this.listlaboratory;
+    // this._service
+    //   .listLaboratory()
+    //   .subscribe((data) => (this.listlaboratory = data));
+    // this.aux = this.listlaboratory;
   }
 }

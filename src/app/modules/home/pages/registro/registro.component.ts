@@ -12,8 +12,6 @@ import { RegistroService } from "src/app/core/http/services/registro.service";
 })
 export class RegistroComponent implements OnInit {
   mylogo: string = "assets/images/Logo.png";
-  
-  ciudad_combo: String[] = ["La Paz", "Cochabamba", "Santa Cruz"];
 
   user = new User();
 
@@ -27,16 +25,14 @@ export class RegistroComponent implements OnInit {
     this._service.conexionBackend(this.user).subscribe(
       (data) => {
         console.log("registrar");
-        this._router.navigate(['/'])
+        this._router.navigate(["/"]);
       },
       (error) => {
         console.log("exception ocurred");
       }
-    )
+    );
   }
 
-
-  
   irIngreso() {
     this._router.navigate(["/login"], { relativeTo: this.route });
   }
