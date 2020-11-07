@@ -48,6 +48,9 @@
   &--primary {
     background-color: $color-primary-blue !important;
   }
+  &__chat {
+    margin-left: 1rem !important;
+  }
 }
 .button__dialog--positive {
   background-color: $color-primary-blue !important;

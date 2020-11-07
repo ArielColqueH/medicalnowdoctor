@@ -6,6 +6,13 @@
         nombreArchivo
       }}</textarea>
     </mat-form-field>
+    <button
+      (click)="abrirPrescripcion()"
+      mat-fab
+      class="circle-button--primary circle-button__chat"
+    >
+      <mat-icon>description</mat-icon>
+    </button>
     <input
       #csvInput
       hidden="true"
@@ -14,13 +21,19 @@
       accept=".png,.jpg"
       (change)="handleFileInput($event.target.files)"
     />
-    <button (click)="csvInput.click()" mat-fab class="circle-button--primary">
+    <button
+      (click)="csvInput.click()"
+      mat-fab
+      class="circle-button--primary circle-button__chat"
+    >
       <mat-icon>attachment</mat-icon>
     </button>
   </div>
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
-      <div class="title__text">Consultas individuales</div>
+      <div class="title__text">
+        Consultas individuales | Paciente : Mariana Cardozo Costa
+      </div>
       <div class="title__row"></div>
     </div>
   </div>

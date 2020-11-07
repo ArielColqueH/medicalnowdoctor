@@ -16,7 +16,10 @@ import { HistorialCompletoComponent } from "./modules/home/pages/home/historial-
 import { HistorialListaComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-lista.component";
 import { HomeComponent } from "./modules/home/pages/home/home.component";
 import { LaboratoriosComponent } from "./modules/home/pages/home/laboratorios/laboratorios.component";
-import { RecetasComponent } from "./modules/home/pages/home/recetas/recetas.component";
+import { PrescripcionesBaseComponent } from "./modules/home/pages/home/prescripciones-base/prescripciones-base.component";
+import { PrescripcionesDetalleComponent } from "./modules/home/pages/home/prescripciones-base/prescripciones/prescripciones-detalle/prescripciones-detalle.component";
+import { PrescripcionesComponent } from "./modules/home/pages/home/prescripciones-base/prescripciones/prescripciones.component";
+
 import { LoginComponent } from "./modules/home/pages/login/login.component";
 import { RegistroComponent } from "./modules/home/pages/registro/registro.component";
 
@@ -77,8 +80,23 @@ const routes: Routes = [
       //   ],
       // },
       {
-        path: "recetas/:id",
-        component: RecetasComponent,
+        path: "prescripciones/:id",
+        component: PrescripcionesBaseComponent,
+        children: [
+          {
+            path: "",
+            component: PrescripcionesComponent,
+          },
+          {
+            path: "prescripcion-detalle",
+            children: [
+              {
+                path: "",
+                component: PrescripcionesDetalleComponent,
+              },
+            ],
+          },
+        ],
       },
       // {
       //   path: "historial/:id",

@@ -1,0 +1,34 @@
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">
+        Prescripciones detalle | Mariana Cardozo Costa | Odontologia
+      </div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="card-lista-prescripcion card-lista-prescripcion--header">
+    <div class="card-lista-prescripcion__nombre-doctor">Doctor Asignado</div>
+    <div class="card-lista-prescripcion__fecha">Fecha Pres.</div>
+    <div class="card-lista-prescripcion__button">Acciones</div>
+  </div>
+  <div *ngFor="let item of listPrescriptionItem; let i = index">
+    <div class="card-lista-prescripcion card-lista-prescripcion--row">
+      <div class="card-lista-prescripcion__nombre-doctor">
+        {{ item.doctorName }}
+      </div>
+      <div class="card-lista-prescripcion__fecha">
+        {{ item.prescriptionDate }}
+      </div>
+      <div class="card-lista-prescripcion__button">
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="openDialog()"
+        >
+          Ver Detalle
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

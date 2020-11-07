@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
+import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
 
 @Component({
   selector: "app-consulta-individual",
@@ -50,5 +51,14 @@ export class ConsultaIndividualComponent implements OnInit {
       console.log(tam);
       return true;
     }
+  }
+  abrirPrescripcion() {
+    const dialogRef = this.dialog.open(DetallePrescripcionComponent, {
+      width: "600px",
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
