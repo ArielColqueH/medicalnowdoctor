@@ -87,7 +87,7 @@ export class AuthService {
   private doLoginUser(username: string, tokens: Tokens) {
     this.loggedUser = username;
     this.storeTokens(tokens);
-    this.router.navigate(["/asistencia-medica/" + tokens.userId]);
+    this.router.navigate(["/consultas/" + tokens.userId]);
   }
 
   doLogoutUser() {

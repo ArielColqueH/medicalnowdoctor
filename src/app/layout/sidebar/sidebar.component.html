@@ -2,8 +2,11 @@
   <div class="sidebar-brand">
     <img [src]="mylogo" alt="medicalnowlogo" class="sidebar-brand__logo" />
     <span class="sidebar-brand__subtitle">Medicalnow</span>
+    <span class="sidebar-brand__subtitle sidebar-brand__subtitle--mini"
+      >Doctors</span
+    >
   </div>
-  <a
+  <!-- <a
     class="link"
     mat-list-item
     (click)="irALink('asistencia-medica')"
@@ -12,7 +15,7 @@
   >
     <mat-icon class="link__icon">layers</mat-icon
     ><span class="link__text">Asistencia</span>
-  </a>
+  </a> -->
   <a
     class="link"
     mat-list-item
@@ -53,14 +56,14 @@
     <mat-icon class="link__icon">grain</mat-icon
     ><span class="link__text">Laboratorios</span>
   </a>
-  <a
+  <!-- <a
     class="link"
     mat-list-item
     routerLinkActive="list-item-active-link"
     (click)="irALink('configuraciones')"
     routerLink="/configuraciones"
-  >
+  > 
     <mat-icon class="link__icon">settings</mat-icon
     ><span class="link__text">Configuraciones</span>
-  </a>
+  </a> -->
 </mat-nav-list>

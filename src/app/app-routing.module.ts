@@ -35,28 +35,47 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: "asistencia-medica/:id",
-        component: AsistenciaBaseComponent,
+        path: "consultas/:id",
+        component: ConsultasBaseComponent,
         children: [
           {
             path: "",
-            component: AsistenciaMedicaComponent,
+            component: ConsultasListaComponent,
           },
           {
-            path: "lista-especialidades",
+            path: "consulta-individual",
             children: [
               {
                 path: "",
-                component: ListaEspecialidadesComponent,
-              },
-              {
-                path: "lista-especialistas/:id",
-                component: ListaEspecialistasComponent,
+                component: ConsultaIndividualComponent,
               },
             ],
           },
         ],
       },
+      // {
+      //   path: "asistencia-medica/:id",
+      //   component: AsistenciaBaseComponent,
+      //   children: [
+      //     {
+      //       path: "",
+      //       component: AsistenciaMedicaComponent,
+      //     },
+      //     {
+      //       path: "lista-especialidades",
+      //       children: [
+      //         {
+      //           path: "",
+      //           component: ListaEspecialidadesComponent,
+      //         },
+      //         {
+      //           path: "lista-especialistas/:id",
+      //           component: ListaEspecialistasComponent,
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // },
       {
         path: "recetas/:id",
         component: RecetasComponent,
@@ -79,26 +98,6 @@ const routes: Routes = [
               {
                 path: "",
                 component: HistorialCompletoComponent,
-              },
-            ],
-          },
-        ],
-      },
-
-      {
-        path: "consultas/:id",
-        component: ConsultasBaseComponent,
-        children: [
-          {
-            path: "",
-            component: ConsultasListaComponent,
-          },
-          {
-            path: "consulta-individual",
-            children: [
-              {
-                path: "",
-                component: ConsultaIndividualComponent,
               },
             ],
           },
