@@ -8,6 +8,7 @@ import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-pr
   styleUrls: ["./consulta-individual.component.scss"],
 })
 export class ConsultaIndividualComponent implements OnInit {
+  mensaje: string;
   fileToUpload: File = null;
   nombre: string = "";
   Url: string = "";
@@ -60,5 +61,10 @@ export class ConsultaIndividualComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  enviarMensaje() {
+    console.log(this.mensaje);
+    this.mensaje = "";
   }
 }
