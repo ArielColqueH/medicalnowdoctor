@@ -12,11 +12,11 @@ import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-pr
 export class PrescripcionesComponent implements OnInit {
   listPrescriptionItem: PrescriptionItem[] = [
     {
-      prescriptionItemId: 1,
-      diagnosisName: "ads",
-      doctorName: "ads",
-      prescriptionDate: "12/12/12",
-      prescriptionId: 1,
+      historialId: 1,
+      prescripcionid: 1,
+      patientName: "Ariel Colque Herrera",
+      specialty: "Odontologia",
+      date: "12/12/2002",
     },
   ];
   constructor(

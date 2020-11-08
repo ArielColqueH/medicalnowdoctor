@@ -6,6 +6,7 @@
     </div>
   </div>
   <div class="card-lista-prescripcion card-lista-prescripcion--header">
+    <div class="card-lista-prescripcion__nombre-diagnostico">Id Historial</div>
     <div class="card-lista-prescripcion__nombre-diagnostico">Especialidad</div>
     <div class="card-lista-prescripcion__nombre-diagnostico">
       Nombre Paciente
@@ -16,13 +17,16 @@
   <div *ngFor="let item of listPrescriptionItem; let i = index">
     <div class="card-lista-prescripcion card-lista-prescripcion--row">
       <div class="card-lista-prescripcion__nombre-doctor">
-        {{ item.doctorName }}
+        {{ item.historialId }}
       </div>
       <div class="card-lista-prescripcion__nombre-doctor">
-        {{ item.doctorName }}
+        {{ item.patientName }}
+      </div>
+      <div class="card-lista-prescripcion__nombre-doctor">
+        {{ item.specialty }}
       </div>
       <div class="card-lista-prescripcion__fecha">
-        {{ item.prescriptionDate }}
+        {{ item.date }}
       </div>
       <div class="card-lista-prescripcion__button">
         <button

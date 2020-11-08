@@ -11,25 +11,28 @@ import { ListEspecialist } from "src/app/models/ListaEspecialista";
   styleUrls: ["./laboratorios.component.scss"],
 })
 export class LaboratoriosComponent implements OnInit {
-  listlaboratory: Laboratory[];
-  aux: any;
+  //listlaboratory: Laboratory[];
 
-  /*laboratoryList: Laboratory[] = [
+  listlaboratory: Laboratory[] = [
     {
-      laboratoryId: 1,
+      laboratoryExamsId: "1",
       laboratoryName: "Electrocardiograma",
-      laboratoryDoctor: "Tony Stark",
-      laboratoryDoctorSpecialist: "Cardiologo",
-      laboratoryDate: "11/12/2020",
+      doctorFirstName: "Mario",
+      doctorFirstSurname: "Rojas",
+      specialtyName: "Lopez",
+      laboratoryOrderDate: "2020/1/12",
+      labExamOrder: "5",
     },
     {
-      laboratoryId: 2,
-      laboratoryName: "Analisis",
-      laboratoryDoctor: "Rey richards",
-      laboratoryDoctorSpecialist: "Dentista",
-      laboratoryDate: "15/12/2020",
+      laboratoryExamsId: "2",
+      laboratoryName: "Electrocardiograma 2",
+      doctorFirstName: "Mariana",
+      doctorFirstSurname: "Lucero",
+      specialtyName: "Justina",
+      laboratoryOrderDate: "2020/1/13",
+      labExamOrder: "6",
     },
-  ];*/
+  ];
 
   constructor(private _service: LaboratoryService, private _router: Router) {}
 

@@ -2,7 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
 import { ActivatedRoute } from "@angular/router";
 import { ChatDoctorService } from "src/app/core/http/services/chat-doctor.service";
+import { ChatMensajeService } from "src/app/core/http/services/chat-mensaje.service";
 import { ChatFromDoctor } from "src/app/models/chat-from-doctor";
+import { DoctorMessageModel } from "src/app/models/doctor-message-model";
 import { DarAltaComponent } from "src/app/modules/dialogs/dar-alta/dar-alta.component";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
 
@@ -20,10 +22,12 @@ export class ConsultaIndividualComponent implements OnInit {
   nombreArchivo: string = "";
 
   chat = new ChatFromDoctor();
+  mensajeChat = new DoctorMessageModel();
   constructor(
     public dialog: MatDialog,
     private _service: ChatDoctorService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _serviceMessage: ChatMensajeService
   ) {}
 
   ngOnInit() {
@@ -90,7 +94,17 @@ export class ConsultaIndividualComponent implements OnInit {
   }
 
   enviarMensaje() {
-    console.log(this.mensaje);
+    //console.log("ari");
+    //console.log(this._route.snapshot.paramMap.get("id"));
+    this.mensajeChat = {
+      consultId: Number(this._route.snapshot.paramMap.get("id")),
+      message: this.mensaje,
+    };
+
+    this._serviceMessage
+      .sendMenssage(this.mensajeChat)
+      .subscribe((data) => (this.chat = data));
     this.mensaje = "";
+    window.location.reload();
   }
 }

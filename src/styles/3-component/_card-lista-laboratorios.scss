@@ -29,19 +29,14 @@
     text-align: center;
     //font-weight: bold;
   }
-  &__nombre-doctor {
-    //background-color: orange;
-    flex: 0 1 15%;
-    text-align: center;
-  }
-  &__nombre-especialista {
-    //background-color: palegoldenrod;
-    flex: 0 1 15%;
+  &__paciente {
+    //background-color: plum;
+    flex: 0 1 25%;
     text-align: center;
   }
   &__fecha {
     //background-color: plum;
-    flex: 0 1 15%;
+    flex: 0 1 25%;
     text-align: center;
   }
 }

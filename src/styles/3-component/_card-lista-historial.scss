@@ -25,17 +25,17 @@
 
   &__nombre-doctor {
     //background-color: orange;
-    flex: 0 1 20%;
+    flex: 0 1 15%;
     text-align: center;
   }
   &__nombre-especialista {
     //background-color: palegoldenrod;
-    flex: 0 1 20%;
+    flex: 0 1 15%;
     text-align: center;
   }
   &__especialidad {
     //background-color: palegoldenrod;
-    flex: 0 1 20%;
+    flex: 0 1 15%;
     text-align: center;
   }
   &__fecha {
@@ -46,6 +46,11 @@
   &__estado {
     //background-color: plum;
     flex: 0 1 15%;
+    text-align: center;
+  }
+  &__button {
+    //background-color: plum;
+    flex: 0 1 10%;
     text-align: center;
   }
 }
