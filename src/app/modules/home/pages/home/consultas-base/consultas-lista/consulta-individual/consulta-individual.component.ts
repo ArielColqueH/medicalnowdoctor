@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
+import { ActivatedRoute } from "@angular/router";
+import { ChatDoctorService } from "src/app/core/http/services/chat-doctor.service";
+import { ChatFromDoctor } from "src/app/models/chat-from-doctor";
+import { DarAltaComponent } from "src/app/modules/dialogs/dar-alta/dar-alta.component";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
 
 @Component({
@@ -15,9 +19,22 @@ export class ConsultaIndividualComponent implements OnInit {
   tipoArchivo: string = "";
   nombreArchivo: string = "";
 
-  constructor(public dialog: MatDialog) {}
+  chat = new ChatFromDoctor();
+  constructor(
+    public dialog: MatDialog,
+    private _service: ChatDoctorService,
+    private _route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.ObtenerDatos();
+  }
+
+  ObtenerDatos() {
+    this._service
+      .listChat(this._route.snapshot.paramMap.get("id"))
+      .subscribe((data) => (this.chat = data));
+  }
 
   handleFileInput(file: FileList) {
     this.fileToUpload = null;
@@ -55,6 +72,15 @@ export class ConsultaIndividualComponent implements OnInit {
   }
   abrirPrescripcion() {
     const dialogRef = this.dialog.open(DetallePrescripcionComponent, {
+      width: "600px",
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  abrirDarAlta() {
+    const dialogRef = this.dialog.open(DarAltaComponent, {
       width: "600px",
     });
 

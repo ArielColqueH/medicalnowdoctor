@@ -1,0 +1,7 @@
+import { ConversationModel } from "./conversation-model";
+import { PatientNameModel } from "./patient-name-model";
+
+export class ChatFromDoctor {
+  patientInfo: PatientNameModel;
+  content: ConversationModel[];
+}

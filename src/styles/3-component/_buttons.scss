@@ -21,6 +21,12 @@
     width: 25rem;
   }
 }
+.button {
+  &--primary {
+    background-color: $color-primary-blue !important;
+    color: $color-primary-white !important;
+  }
+}
 
 .button__circle {
   cursor: pointer;
