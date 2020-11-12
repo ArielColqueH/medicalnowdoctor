@@ -23,33 +23,27 @@
     font-weight: bold;
   }
 
-  &__nombre-doctor {
+  &__paciente {
     //background-color: orange;
-    flex: 0 1 20%;
-    text-align: center;
-  }
-
-  &__nombre-especialista {
-    //background-color: palegoldenrod;
-    flex: 0 1 20%;
+    flex: 0 1 25%;
     text-align: center;
   }
 
   &__especialidad {
     //background-color: palegoldenrod;
-    flex: 0 1 20%;
+    flex: 0 1 25%;
     text-align: center;
   }
 
   &__fecha {
     //background-color: plum;
-    flex: 0 1 15%;
+    flex: 0 1 25%;
     text-align: center;
   }
 
-  &__estado {
+  &__button {
     //background-color: plum;
-    flex: 0 1 15%;
+    flex: 0 1 25%;
     text-align: center;
   }
 }

@@ -10,15 +10,15 @@ import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-pr
 })
 export class PrescripcionesDetalleComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
-  listPrescriptionItem: PrescriptionItem[] = [
-    {
-      prescriptionItemId: 1,
-      diagnosisName: "ads",
-      doctorName: "ads",
-      prescriptionDate: "12/12/12",
-      prescriptionId: 1,
-    },
-  ];
+  // listPrescriptionItem: PrescriptionItem[] = [
+  //   {
+  //     prescriptionItemId: 1,
+  //     diagnosisName: "ads",
+  //     doctorName: "ads",
+  //     prescriptionDate: "12/12/12",
+  //     prescriptionId: 1,
+  //   },
+  // ];
   ngOnInit() {}
 
   openDialog() {

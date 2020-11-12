@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AuthGuard } from "./core/auth/guards/auth.guard";
 import { MainComponent } from "./layout/main/main.component";
+import { ArchivadasBaseComponent } from "./modules/home/pages/home/archivadas-base/archivadas-base.component";
+import { ListaArchivadasComponent } from "./modules/home/pages/home/archivadas-base/lista-archivadas/lista-archivadas.component";
 import { AsistenciaBaseComponent } from "./modules/home/pages/home/asistencia-base/asistencia-base.component";
 import { AsistenciaMedicaComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/asistencia-medica.component";
 import { ListaEspecialidadesComponent } from "./modules/home/pages/home/asistencia-base/asistencia-medica/lista-especialidades/lista-especialidades.component";
@@ -119,6 +121,26 @@ const routes: Routes = [
               },
             ],
           },
+        ],
+      },
+
+      {
+        path: "archivadas/:id",
+        component: ArchivadasBaseComponent,
+        children: [
+          {
+            path: "",
+            component: ListaArchivadasComponent,
+          },
+          // {
+          //   path: "historial-completo",
+          //   children: [
+          //     {
+          //       path: "",
+          //       component: HistorialCompletoComponent,
+          //     },
+          //   ],
+          // },
         ],
       },
 

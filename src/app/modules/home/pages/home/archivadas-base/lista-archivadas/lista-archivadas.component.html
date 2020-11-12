@@ -1,0 +1,48 @@
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">Consultas Archivadas</div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div
+    class="card-lista-consultas-archivadas card-lista-consultas-archivadas--header"
+  >
+    <div class="card-lista-consultas-archivadas__paciente">Paciente</div>
+    <div class="card-lista-consultas-archivadas__especialidad">
+      Especialidad
+    </div>
+    <div class="card-lista-consultas-archivadas__fecha">Fecha de Inicio</div>
+    <div class="card-lista-consultas-archivadas__fecha-final">
+      Fecha de Final
+    </div>
+    <div class="card-lista-consultas-archivadas__button">Accion</div>
+  </div>
+  <div *ngFor="let item of consultasDePaciente; let i = index">
+    <div
+      class="card-lista-consultas-archivadas card-lista-consultas-archivadas--row"
+    >
+      <div class="card-lista-consultas-archivadas__paciente">
+        {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
+      </div>
+      <div class="card-lista-consultas-archivadas__especialidad">
+        Odontologia
+      </div>
+      <div class="card-lista-consultas-archivadas__fecha">
+        {{ item.startDate }}
+      </div>
+      <div class="card-lista-consultas-archivadas__fecha-final">
+        {{ item.startDate }}
+      </div>
+      <div class="card-lista-consultas-archivadas__button">
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="irAChat(item.consultId)"
+        >
+          Activar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

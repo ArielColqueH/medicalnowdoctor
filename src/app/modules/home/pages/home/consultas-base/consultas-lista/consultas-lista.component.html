@@ -6,15 +6,17 @@
     </div>
   </div>
   <div class="card-lista-consultas card-lista-consultas--header">
-    <div class="card-lista-consultas__nombre-doctor">Paciente</div>
+    <div class="card-lista-consultas__paciente">Paciente</div>
+    <div class="card-lista-consultas__especialidad">Especialidad</div>
     <div class="card-lista-consultas__fecha">Fecha de Inicio</div>
     <div class="card-lista-consultas__button">Accion</div>
   </div>
   <div *ngFor="let item of consultasDePaciente; let i = index">
     <div class="card-lista-consultas card-lista-consultas--row">
-      <div class="card-lista-consultas__nombre-doctor">
+      <div class="card-lista-consultas__paciente">
         {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
       </div>
+      <div class="card-lista-consultas__especialidad">Odontologia</div>
       <div class="card-lista-consultas__fecha">{{ item.startDate }}</div>
       <div class="card-lista-consultas__button">
         <button

@@ -41,6 +41,8 @@ import { ConsultaIndividualComponent } from "./pages/home/consultas-base/consult
 import { PrescripcionesBaseComponent } from "./pages/home/prescripciones-base/prescripciones-base.component";
 import { PrescripcionesDetalleComponent } from "./pages/home/prescripciones-base/prescripciones/prescripciones-detalle/prescripciones-detalle.component";
 import { PrescripcionesComponent } from "./pages/home/prescripciones-base/prescripciones/prescripciones.component";
+import { ListaArchivadasComponent } from "./pages/home/archivadas-base/lista-archivadas/lista-archivadas.component";
+import { ArchivadasBaseComponent } from "./pages/home/archivadas-base/archivadas-base.component";
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { PrescripcionesComponent } from "./pages/home/prescripciones-base/prescr
     PrescripcionesBaseComponent,
     PrescripcionesComponent,
     PrescripcionesDetalleComponent,
+    ArchivadasBaseComponent,
+    ListaArchivadasComponent,
   ],
   imports: [
     CommonModule,

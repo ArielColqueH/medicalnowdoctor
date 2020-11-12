@@ -29,6 +29,16 @@
   <a
     class="link"
     mat-list-item
+    (click)="irALink('archivadas')"
+    routerLink="/archivadas"
+    routerLinkActive="list-item-active-link"
+  >
+    <mat-icon class="link__icon">speaker_notes_off</mat-icon
+    ><span class="link__text">Archivadas</span>
+  </a>
+  <a
+    class="link"
+    mat-list-item
     routerLinkActive="list-item-active-link"
     routerLink="/prescripciones"
     (click)="irALink('prescripciones')"
@@ -56,14 +66,14 @@
     <mat-icon class="link__icon">grain</mat-icon
     ><span class="link__text">Laboratorios</span>
   </a>
-  <!-- <a
+  <a
     class="link"
     mat-list-item
     routerLinkActive="list-item-active-link"
     (click)="irALink('configuraciones')"
     routerLink="/configuraciones"
-  > 
+  >
     <mat-icon class="link__icon">settings</mat-icon
     ><span class="link__text">Configuraciones</span>
-  </a> -->
+  </a>
 </mat-nav-list>
