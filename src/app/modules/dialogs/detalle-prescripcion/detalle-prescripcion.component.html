@@ -13,6 +13,8 @@
         <textarea
           matInput
           placeholder="Usted debe colocarse la pomada 3 veces al dia"
+          [(ngModel)]="descripcion"
+          name="descripcionitem"
         ></textarea>
       </mat-form-field>
     </form>
@@ -20,7 +22,11 @@
       <div class="dialog-prescripcion__nombre-producto">Producto</div>
       <div class="dialog-prescripcion__nombre-detalle">Detalle</div>
       <div class="dialog-prescripcion__nombre-cantidad">Cantidad</div>
-      <button mat-mini-fab class="circle-button--primary circle-button__chat">
+      <button
+        mat-mini-fab
+        class="circle-button--primary circle-button__chat"
+        (click)="agregaralista()"
+      >
         <mat-icon>add</mat-icon>
       </button>
     </div>
@@ -29,17 +35,36 @@
       <div class="dialog-prescripcion dialog-prescripcion--row">
         <mat-form-field class="dialog-prescripcion__nombre-producto">
           <mat-label>Nombre</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+          <input
+            matInput
+            placeholder="Diazepan"
+            name="nombreitem{{ i }}"
+            [(ngModel)]="item.prescriptionName"
+          />
         </mat-form-field>
         <mat-form-field class="dialog-prescripcion__nombre-detalle">
           <mat-label>Detalle</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+          <input
+            matInput
+            placeholder="20 pastillas"
+            name="detalleitem{{ i }}"
+            [(ngModel)]="item.prescriptionDetail"
+          />
         </mat-form-field>
         <mat-form-field class="dialog-prescripcion__nombre-cantidad">
           <mat-label>Cantidad</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+          <input
+            matInput
+            placeholder="10"
+            name="cantidaditem {{ i }}"
+            [(ngModel)]="item.prescriptionQuantity"
+          />
         </mat-form-field>
-        <button mat-mini-fab class="circle-button--delete circle-button__chat">
+        <button
+          mat-mini-fab
+          class="circle-button--delete circle-button__chat"
+          (click)="eliminardelista(i)"
+        >
           <mat-icon>delete</mat-icon>
         </button>
       </div>
@@ -48,6 +73,7 @@
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancelar</button>
     <button
+      (click)="enviarprescripcion()"
       mat-button
       [mat-dialog-close]="true"
       class="button button--primary"
