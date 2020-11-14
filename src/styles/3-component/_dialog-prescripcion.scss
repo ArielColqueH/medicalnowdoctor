@@ -7,31 +7,38 @@
     display: flex;
     margin: 1rem 0;
     justify-content: space-between;
+    //width: 100%;
+    //background-color: green;
+    align-items: center;
   }
   &--header {
     display: flex;
     margin: 1rem 0;
     justify-content: space-between;
     color: $color-primary-blue;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
+    align-items: center;
   }
 
   //background-color: red;
   &__nombre-producto {
     //background-color: red;
-    flex: 0 1 40%;
+    //flex: 0 1 25%;
+    width: 25%;
     text-align: center;
     //font-weight: bold;
   }
   &__nombre-detalle {
     //background-color: orange;
-    flex: 0 1 40%;
+    //flex: 0 1 33%;
+    width: 25%;
     text-align: center;
   }
   &__nombre-cantidad {
     //background-color: palegoldenrod;
-    flex: 0 1 20%;
+    //flex: 0 1 33%;
+    width: 25%;
     text-align: center;
   }
 }

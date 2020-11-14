@@ -6,6 +6,7 @@ import { ChatMensajeService } from "src/app/core/http/services/chat-mensaje.serv
 import { ChatFromDoctor } from "src/app/models/chat-from-doctor";
 import { DoctorMessageModel } from "src/app/models/doctor-message-model";
 import { DarAltaComponent } from "src/app/modules/dialogs/dar-alta/dar-alta.component";
+import { DarDiagnosticoComponent } from "src/app/modules/dialogs/dar-diagnostico/dar-diagnostico.component";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
 
 @Component({
@@ -76,6 +77,16 @@ export class ConsultaIndividualComponent implements OnInit {
   }
   abrirPrescripcion() {
     const dialogRef = this.dialog.open(DetallePrescripcionComponent, {
+      width: "600px",
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  abrirDarDiagnostico() {
+    const dialogRef = this.dialog.open(DarDiagnosticoComponent, {
       width: "600px",
     });
 

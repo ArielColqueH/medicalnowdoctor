@@ -7,19 +7,27 @@
       }}</textarea>
     </mat-form-field>
     <button
-      (click)="abrirDarAlta()"
+      (click)="abrirDarDiagnostico()"
       mat-fab
-      class="circle-button--primary circle-button__chat"
+      class="circle-button--secondary circle-button__chat"
     >
-      <mat-icon>offline_pin</mat-icon>
+      <mat-icon>create</mat-icon>
     </button>
     <button
       (click)="abrirPrescripcion()"
       mat-fab
-      class="circle-button--primary circle-button__chat"
+      class="circle-button--secondary circle-button__chat"
     >
       <mat-icon>description</mat-icon>
     </button>
+    <button
+      (click)="abrirDarAlta()"
+      mat-fab
+      class="circle-button--secondary circle-button__chat"
+    >
+      <mat-icon>offline_pin</mat-icon>
+    </button>
+
     <input
       #csvInput
       hidden="true"

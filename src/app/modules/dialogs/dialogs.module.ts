@@ -6,9 +6,14 @@ import { MatInputModule } from "@angular/material/input";
 import { DetallePrescripcionComponent } from "./detalle-prescripcion/detalle-prescripcion.component";
 import { FormsModule } from "@angular/forms";
 import { DarAltaComponent } from "./dar-alta/dar-alta.component";
+import { DarDiagnosticoComponent } from "./dar-diagnostico/dar-diagnostico.component";
 
 @NgModule({
-  declarations: [DetallePrescripcionComponent, DarAltaComponent],
+  declarations: [
+    DetallePrescripcionComponent,
+    DarAltaComponent,
+    DarDiagnosticoComponent,
+  ],
   imports: [
     CommonModule,
     MatDialogModule,
@@ -17,6 +22,10 @@ import { DarAltaComponent } from "./dar-alta/dar-alta.component";
     MatInputModule,
     FormsModule,
   ],
-  entryComponents: [DetallePrescripcionComponent, DarAltaComponent],
+  entryComponents: [
+    DetallePrescripcionComponent,
+    DarAltaComponent,
+    DarDiagnosticoComponent,
+  ],
 })
 export class DialogsModule {}

@@ -17,28 +17,43 @@
       </mat-form-field>
     </form>
     <div class="dialog-prescripcion dialog-prescripcion--header">
-      <div class="dialog-prescripcion__nombre-producto">
-        Nombre del Producto
-      </div>
+      <div class="dialog-prescripcion__nombre-producto">Producto</div>
       <div class="dialog-prescripcion__nombre-detalle">Detalle</div>
       <div class="dialog-prescripcion__nombre-cantidad">Cantidad</div>
+      <button mat-mini-fab class="circle-button--primary circle-button__chat">
+        <mat-icon>add</mat-icon>
+      </button>
     </div>
+    <div class="dialog__detalle-line"></div>
     <div class="" *ngFor="let item of prescriptionList; let i = index">
       <div class="dialog-prescripcion dialog-prescripcion--row">
-        <div class="dialog-prescripcion__nombre-producto">
-          {{ item.prescriptionName }}
-        </div>
-        <div class="dialog-prescripcion__nombre-detalle">
-          {{ item.prescriptionDetail }}
-        </div>
-        <div class="dialog-prescripcion__nombre-cantidad">
-          {{ item.prescriptionQuantity }}
-        </div>
+        <mat-form-field class="dialog-prescripcion__nombre-producto">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        </mat-form-field>
+        <mat-form-field class="dialog-prescripcion__nombre-detalle">
+          <mat-label>Detalle</mat-label>
+          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        </mat-form-field>
+        <mat-form-field class="dialog-prescripcion__nombre-cantidad">
+          <mat-label>Cantidad</mat-label>
+          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        </mat-form-field>
+        <button mat-mini-fab class="circle-button--delete circle-button__chat">
+          <mat-icon>delete</mat-icon>
+        </button>
       </div>
-      <div class="dialog__detalle-line"></div>
     </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancelar</button>
+    <button
+      mat-button
+      [mat-dialog-close]="true"
+      class="button button--primary"
+      cdkFocusInitial
+    >
+      Aceptar
+    </button>
   </mat-dialog-actions>
 </div>
