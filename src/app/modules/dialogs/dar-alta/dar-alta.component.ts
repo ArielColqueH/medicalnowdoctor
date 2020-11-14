@@ -10,4 +10,7 @@ export class DarAltaComponent implements OnInit {
 
   ngOnInit() {}
   //dgrantham4@cbslocal.com user 2 y 5
+  daralta() {
+    console.log("dar alta");
+  }
 }

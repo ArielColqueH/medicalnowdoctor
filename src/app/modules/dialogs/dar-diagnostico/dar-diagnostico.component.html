@@ -11,6 +11,8 @@
       <mat-form-field class="dialog__form--width">
         <mat-label>Detalle de Diagnostico</mat-label>
         <textarea
+          [(ngModel)]="diagnostico"
+          name="diagnostico"
           matInput
           placeholder="El paciente parece tenre sintomas de ..."
         ></textarea>
@@ -24,6 +26,7 @@
       [mat-dialog-close]="true"
       class="button button--primary"
       cdkFocusInitial
+      (click)="enviardiagnostico()"
     >
       Aceptar
     </button>
