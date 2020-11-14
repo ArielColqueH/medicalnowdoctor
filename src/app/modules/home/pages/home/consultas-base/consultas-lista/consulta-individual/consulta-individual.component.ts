@@ -22,6 +22,8 @@ export class ConsultaIndividualComponent implements OnInit {
   tipoArchivo: string = "";
   nombreArchivo: string = "";
 
+  consultId: string = this._route.snapshot.paramMap.get("id");
+
   chat = new ChatFromDoctor();
   mensajeChat = new DoctorMessageModel();
   constructor(
@@ -88,6 +90,9 @@ export class ConsultaIndividualComponent implements OnInit {
   abrirDarDiagnostico() {
     const dialogRef = this.dialog.open(DarDiagnosticoComponent, {
       width: "600px",
+      data: {
+        datakey: this.consultId,
+      },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
