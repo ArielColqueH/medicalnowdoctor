@@ -8,6 +8,7 @@ import { FormsModule } from "@angular/forms";
 import { DarAltaComponent } from "./dar-alta/dar-alta.component";
 import { DarDiagnosticoComponent } from "./dar-diagnostico/dar-diagnostico.component";
 import { MiniChatComponent } from "./mini-chat/mini-chat.component";
+import { ActivarConsultaComponent } from "./activar-consulta/activar-consulta.component";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MiniChatComponent } from "./mini-chat/mini-chat.component";
     DarAltaComponent,
     DarDiagnosticoComponent,
     MiniChatComponent,
+    ActivarConsultaComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,7 @@ import { MiniChatComponent } from "./mini-chat/mini-chat.component";
     DarAltaComponent,
     DarDiagnosticoComponent,
     MiniChatComponent,
+    ActivarConsultaComponent,
   ],
 })
 export class DialogsModule {}

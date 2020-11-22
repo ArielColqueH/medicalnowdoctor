@@ -1,18 +1,18 @@
 <div class="dialog__container">
   <div mat-dialog-title class="dialog__subtitle">
     <div class="dialog__subtitle-content">
-      <div class="dialog__subtitle-text">Dar Alta</div>
+      <div class="dialog__subtitle-text">Activar Chat</div>
       <div class="dialog__subtitle-button"></div>
     </div>
     <div class="dialog__subtitle-line"></div>
   </div>
   <mat-dialog-content>
-    Esta seguro que desea dar de alta al paciente?
+    Esta seguro que desea volver a activar el chat?
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancelar</button>
     <button
-      (click)="darAlta()"
+      (click)="activarChat()"
       mat-button
       [mat-dialog-close]="true"
       class="button button--primary"

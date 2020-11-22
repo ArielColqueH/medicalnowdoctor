@@ -25,7 +25,5 @@ export class DarAltaComponent implements OnInit {
       .subscribe((data) =>
         this._router.navigate(["consultas/" + localStorage.getItem("userId")])
       );
-
-    //window.location.reload();
   }
 }
