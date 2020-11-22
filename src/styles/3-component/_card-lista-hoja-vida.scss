@@ -1,4 +1,4 @@
-.card-lista-prescripcion {
+.card-lista-hoja-vida {
   &--row {
     background-color: $color-primary-white;
     display: flex;
@@ -23,23 +23,19 @@
     font-weight: bold;
   }
 
-  &__nombre-doctor {
+  &__button {
     //background-color: orange;
-    flex: 0 1 25%;
+    flex: 0 1 30%;
     text-align: center;
   }
-  &__nombre-especialista {
+  &__estado {
     //background-color: palegoldenrod;
-    flex: 0 1 25%;
+    flex: 0 1 35%;
     text-align: center;
   }
   &__fecha {
     //background-color: plum;
-    flex: 0 1 25%;
-    text-align: center;
-  }
-  &__button {
-    flex: 0 1 25%;
+    flex: 0 1 35%;
     text-align: center;
   }
 }

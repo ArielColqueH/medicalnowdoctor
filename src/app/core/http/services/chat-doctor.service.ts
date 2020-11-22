@@ -18,6 +18,5 @@ export class ChatDoctorService {
         headers: reqHeader,
       }
     );
-    //id de la consulta
   }
 }

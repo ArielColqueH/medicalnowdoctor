@@ -3,6 +3,7 @@ import { MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PrescriptionItem } from "src/app/models/prescription-item";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
+import { MiniChatComponent } from "src/app/modules/dialogs/mini-chat/mini-chat.component";
 
 @Component({
   selector: "app-prescripciones",
@@ -22,11 +23,13 @@ export class PrescripcionesComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private _router: Router,
-    private route: ActivatedRoute
+    private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {}
   openDialog() {
-    this._router.navigate(["prescripcion-detalle"], { relativeTo: this.route });
+    this._router.navigate(["prescripcion-detalle"], {
+      relativeTo: this._route,
+    });
   }
 }

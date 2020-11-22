@@ -7,12 +7,14 @@ import { DetallePrescripcionComponent } from "./detalle-prescripcion/detalle-pre
 import { FormsModule } from "@angular/forms";
 import { DarAltaComponent } from "./dar-alta/dar-alta.component";
 import { DarDiagnosticoComponent } from "./dar-diagnostico/dar-diagnostico.component";
+import { MiniChatComponent } from "./mini-chat/mini-chat.component";
 
 @NgModule({
   declarations: [
     DetallePrescripcionComponent,
     DarAltaComponent,
     DarDiagnosticoComponent,
+    MiniChatComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { DarDiagnosticoComponent } from "./dar-diagnostico/dar-diagnostico.compo
     DetallePrescripcionComponent,
     DarAltaComponent,
     DarDiagnosticoComponent,
+    MiniChatComponent,
   ],
 })
 export class DialogsModule {}

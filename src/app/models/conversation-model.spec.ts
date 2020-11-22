@@ -1,7 +1,7 @@
-import { ConversationModel } from './conversation-model';
+import { ChatModel } from "./ChatModel";
 
-describe('ConversationModel', () => {
-  it('should create an instance', () => {
-    expect(new ConversationModel()).toBeTruthy();
+describe("ConversationModel", () => {
+  it("should create an instance", () => {
+    expect(new ChatModel()).toBeTruthy();
   });
 });

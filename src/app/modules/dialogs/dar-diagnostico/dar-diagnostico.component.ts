@@ -37,7 +37,6 @@ export class DarDiagnosticoComponent implements OnInit {
       .enviarDiagnostico(this.data.datakey, this.diagnosticoAux)
       .subscribe((data) => (this.diagnostico = data));
     //this.mensaje = "";
-    window.location.reload();
   }
 
   ObtenerDiagnostico() {

@@ -1,7 +1,7 @@
-import { DoctorMessageModel } from './doctor-message-model';
+import { MessageModel } from "./message-model";
 
-describe('DoctorMessageModel', () => {
-  it('should create an instance', () => {
-    expect(new DoctorMessageModel()).toBeTruthy();
+describe("DoctorMessageModel", () => {
+  it("should create an instance", () => {
+    expect(new MessageModel()).toBeTruthy();
   });
 });

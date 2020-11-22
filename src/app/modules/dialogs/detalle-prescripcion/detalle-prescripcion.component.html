@@ -13,7 +13,7 @@
         <textarea
           matInput
           placeholder="Usted debe colocarse la pomada 3 veces al dia"
-          [(ngModel)]="descripcion"
+          [(ngModel)]="descripcion.description"
           name="descripcionitem"
         ></textarea>
       </mat-form-field>
@@ -31,7 +31,7 @@
       </button>
     </div>
     <div class="dialog__detalle-line"></div>
-    <div class="" *ngFor="let item of prescriptionList; let i = index">
+    <div class="" *ngFor="let item of descripcion.content; let i = index">
       <div class="dialog-prescripcion dialog-prescripcion--row">
         <mat-form-field class="dialog-prescripcion__nombre-producto">
           <mat-label>Nombre</mat-label>
@@ -39,7 +39,7 @@
             matInput
             placeholder="Diazepan"
             name="nombreitem{{ i }}"
-            [(ngModel)]="item.prescriptionName"
+            [(ngModel)]="item.productName"
           />
         </mat-form-field>
         <mat-form-field class="dialog-prescripcion__nombre-detalle">
@@ -48,7 +48,7 @@
             matInput
             placeholder="20 pastillas"
             name="detalleitem{{ i }}"
-            [(ngModel)]="item.prescriptionDetail"
+            [(ngModel)]="item.productDetail"
           />
         </mat-form-field>
         <mat-form-field class="dialog-prescripcion__nombre-cantidad">
@@ -57,7 +57,7 @@
             matInput
             placeholder="10"
             name="cantidaditem {{ i }}"
-            [(ngModel)]="item.prescriptionQuantity"
+            [(ngModel)]="item.productQtty"
           />
         </mat-form-field>
         <button

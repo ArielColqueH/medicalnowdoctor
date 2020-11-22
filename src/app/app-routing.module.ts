@@ -14,7 +14,9 @@ import { ConsultasBaseComponent } from "./modules/home/pages/home/consultas-base
 import { ConsultaIndividualComponent } from "./modules/home/pages/home/consultas-base/consultas-lista/consulta-individual/consulta-individual.component";
 import { ConsultasListaComponent } from "./modules/home/pages/home/consultas-base/consultas-lista/consultas-lista.component";
 import { HistorialBaseComponent } from "./modules/home/pages/home/historial-base/historial-base.component";
-import { HistorialCompletoComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-completo/historial-completo.component";
+import { HistorialCompletoComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-lista-detalle/historial-completo/historial-completo.component";
+
+import { HistorialListaDetalleComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-lista-detalle/historial-lista-detalle.component";
 import { HistorialListaComponent } from "./modules/home/pages/home/historial-base/historial-lista/historial-lista.component";
 import { HomeComponent } from "./modules/home/pages/home/home.component";
 import { LaboratoriosComponent } from "./modules/home/pages/home/laboratorios/laboratorios.component";
@@ -113,11 +115,20 @@ const routes: Routes = [
             component: HistorialListaComponent,
           },
           {
-            path: "historial-completo",
+            path: "historial-lista-detalle/:id",
             children: [
               {
                 path: "",
-                component: HistorialCompletoComponent,
+                component: HistorialListaDetalleComponent,
+              },
+              {
+                path: "historial-completo/:id",
+                children: [
+                  {
+                    path: "",
+                    component: HistorialCompletoComponent,
+                  },
+                ],
               },
             ],
           },

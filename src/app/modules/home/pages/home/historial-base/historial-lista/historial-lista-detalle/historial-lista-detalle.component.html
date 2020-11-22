@@ -1,0 +1,36 @@
+<div class="container">
+  <div fxLayout="row" class="mt-5">
+    <div class="title" fxFlex>
+      <div class="title__text">
+        Historial Medico de Paciente : Ariel Colque Herrera
+      </div>
+      <div class="title__row"></div>
+    </div>
+  </div>
+  <div class="card-lista-hoja-vida card-lista-hoja-vida--header">
+    <div class="card-lista-hoja-vida__fecha">Fecha</div>
+    <div class="card-lista-hoja-vida__estado">Estado</div>
+    <div class="card-lista-hoja-vida__button">Acciones</div>
+  </div>
+  <!-- <div *ngFor="let item of medicalHitoryHoja.content; let i = index"> -->
+  <div class="card-lista-hoja-vida card-lista-hoja-vida--row">
+    <div class="card-lista-hoja-vida__fecha">
+      2020/12/01
+      <!-- {{ item.startDate }} -->
+    </div>
+    <div class="card-lista-hoja-vida__estado">
+      <!-- {{ item.status == 1 ? "Activo" : "Inactivo" }} -->
+      Activo
+    </div>
+    <div class="card-lista-hoja-vida__button">
+      <button
+        mat-raised-button
+        class="button__normal-button"
+        (click)="HistorialMedicoDetalle(1)"
+      >
+        Ver
+      </button>
+    </div>
+  </div>
+  <!-- </div> -->
+</div>

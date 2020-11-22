@@ -4,7 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ChatDoctorService } from "src/app/core/http/services/chat-doctor.service";
 import { ChatMensajeService } from "src/app/core/http/services/chat-mensaje.service";
 import { ChatFromDoctor } from "src/app/models/chat-from-doctor";
-import { DoctorMessageModel } from "src/app/models/doctor-message-model";
+import { MessageModel } from "src/app/models/message-model";
 import { DarAltaComponent } from "src/app/modules/dialogs/dar-alta/dar-alta.component";
 import { DarDiagnosticoComponent } from "src/app/modules/dialogs/dar-diagnostico/dar-diagnostico.component";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
@@ -25,7 +25,7 @@ export class ConsultaIndividualComponent implements OnInit {
   consultId: string = this._route.snapshot.paramMap.get("id");
 
   chat = new ChatFromDoctor();
-  mensajeChat = new DoctorMessageModel();
+  mensajeChat = new MessageModel();
   constructor(
     public dialog: MatDialog,
     private _service: ChatDoctorService,
@@ -80,6 +80,9 @@ export class ConsultaIndividualComponent implements OnInit {
   abrirPrescripcion() {
     const dialogRef = this.dialog.open(DetallePrescripcionComponent, {
       width: "600px",
+      data: {
+        datakey: this.consultId,
+      },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -99,9 +102,13 @@ export class ConsultaIndividualComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
   abrirDarAlta() {
     const dialogRef = this.dialog.open(DarAltaComponent, {
       width: "600px",
+      data: {
+        datacondultid: this.consultId,
+      },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -113,7 +120,7 @@ export class ConsultaIndividualComponent implements OnInit {
     //console.log("ari");
     //console.log(this._route.snapshot.paramMap.get("id"));
     this.mensajeChat = {
-      consultId: Number(this._route.snapshot.paramMap.get("id")),
+      consultId: this._route.snapshot.paramMap.get("id"),
       message: this.mensaje,
     };
 

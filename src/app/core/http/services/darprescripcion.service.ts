@@ -1,21 +1,21 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { config } from "src/app/models/auth/config";
-import { MessageModel } from "src/app/models/message-model";
+import { PrescriptionJSON } from "src/app/models/prescription-json";
 
 @Injectable({
   providedIn: "root",
 })
-export class ChatMensajeService {
+export class DarprescripcionService {
   constructor(private _http: HttpClient) {}
-  sendMenssage(doctorMessage: MessageModel) {
+  crearDiagnostico(consultId: number, prescripcion: PrescriptionJSON) {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
     return this._http.post<any>(
-      `${config.apiUrl}/chat/send/message/` + localStorage.getItem("userId"),
-      doctorMessage,
+      `${config.apiUrl}/prescription/` + consultId + `/add/detail`,
+      prescripcion,
       {
         headers: reqHeader,
       }

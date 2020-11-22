@@ -34,7 +34,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatDialogModule } from "@angular/material/dialog";
 import { HistorialBaseComponent } from "./pages/home/historial-base/historial-base.component";
 import { HistorialListaComponent } from "./pages/home/historial-base/historial-lista/historial-lista.component";
-import { HistorialCompletoComponent } from "./pages/home/historial-base/historial-lista/historial-completo/historial-completo.component";
 import { ConsultasBaseComponent } from "./pages/home/consultas-base/consultas-base.component";
 import { ConsultasListaComponent } from "./pages/home/consultas-base/consultas-lista/consultas-lista.component";
 import { ConsultaIndividualComponent } from "./pages/home/consultas-base/consultas-lista/consulta-individual/consulta-individual.component";
@@ -43,6 +42,8 @@ import { PrescripcionesDetalleComponent } from "./pages/home/prescripciones-base
 import { PrescripcionesComponent } from "./pages/home/prescripciones-base/prescripciones/prescripciones.component";
 import { ListaArchivadasComponent } from "./pages/home/archivadas-base/lista-archivadas/lista-archivadas.component";
 import { ArchivadasBaseComponent } from "./pages/home/archivadas-base/archivadas-base.component";
+import { HistorialListaDetalleComponent } from "./pages/home/historial-base/historial-lista/historial-lista-detalle/historial-lista-detalle.component";
+import { HistorialCompletoComponent } from "./pages/home/historial-base/historial-lista/historial-lista-detalle/historial-completo/historial-completo.component";
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ArchivadasBaseComponent } from "./pages/home/archivadas-base/archivadas
     PrescripcionesDetalleComponent,
     ArchivadasBaseComponent,
     ListaArchivadasComponent,
+    HistorialListaDetalleComponent,
   ],
   imports: [
     CommonModule,

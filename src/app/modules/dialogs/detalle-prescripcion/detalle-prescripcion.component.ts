@@ -1,5 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Inject, OnInit } from "@angular/core";
+import { MAT_DIALOG_DATA } from "@angular/material";
+import { ActivatedRoute, Router } from "@angular/router";
+import { DarprescripcionService } from "src/app/core/http/services/darprescripcion.service";
 import { Prescription } from "src/app/models/prescription";
+import { PrescriptionJSON } from "src/app/models/prescription-json";
+import { Prescriptiondetailmodel } from "src/app/models/prescriptiondetailmodel";
 
 @Component({
   selector: "app-detalle-prescripcion",
@@ -7,35 +12,33 @@ import { Prescription } from "src/app/models/prescription";
   styleUrls: ["./detalle-prescripcion.component.scss"],
 })
 export class DetallePrescripcionComponent implements OnInit {
-  prescriptionList: Prescription[] = [];
-  descripcion: string;
+  descripcion = new PrescriptionJSON();
+  prescriptionList: Prescriptiondetailmodel[] = [];
+  // descripcion: string;
 
-  constructor() {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private _router: Router,
+    private _route: ActivatedRoute,
+    private _service: DarprescripcionService
+  ) {}
 
   ngOnInit() {}
   agregaralista() {
     var aux = {
-      prescriptionId: 0,
-      prescriptionName: "",
-      prescriptionDetail: "",
-      prescriptionQuantity: 0,
+      productName: "",
+      productDetail: "",
+      productQtty: "",
     };
-    this.prescriptionList.push(aux);
+    this.descripcion.content.push(aux);
   }
   eliminardelista(listaid: number) {
     console.log(listaid);
-    this.prescriptionList.splice(listaid, 1);
+    this.descripcion.content.splice(listaid, 1);
   }
   enviarprescripcion() {
-    console.log(this.descripcion);
-    this.prescriptionList.forEach((element) => {
-      console.log(
-        element.prescriptionName +
-          " " +
-          element.prescriptionDetail +
-          " " +
-          element.prescriptionQuantity
-      );
-    });
+    this._service
+      .crearDiagnostico(this.data.datakey, this.descripcion)
+      .subscribe((data) => (this.descripcion = data));
   }
 }

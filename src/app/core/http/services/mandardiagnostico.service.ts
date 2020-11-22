@@ -15,7 +15,7 @@ export class MandardiagnosticoService {
       Authorization: "bearer " + tokenUser,
     });
     return this._http.post<any>(
-      `${config.apiUrl}/consults/add/diagnosis/` + consultId,
+      `${config.apiUrl}/consult/add/diagnosis/` + consultId,
       diagnostico,
       {
         headers: reqHeader,

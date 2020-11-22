@@ -14,7 +14,7 @@ export class ObtenerdiagnosticoService {
       Authorization: "bearer " + tokenUser,
     });
     return this._http.get<any>(
-      `${config.apiUrl}/consults/diagnosis/` + cosultId,
+      `${config.apiUrl}/consult/diagnosis/` + cosultId,
       {
         headers: reqHeader,
       }

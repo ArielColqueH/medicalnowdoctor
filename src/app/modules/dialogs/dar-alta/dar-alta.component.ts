@@ -1,4 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Inject, OnInit } from "@angular/core";
+import { MAT_DIALOG_DATA } from "@angular/material";
+import { ActivatedRoute, Router } from "@angular/router";
+import { DarAltaService } from "src/app/core/http/services/dar-alta.service";
 
 @Component({
   selector: "app-dar-alta",
@@ -6,11 +9,20 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./dar-alta.component.scss"],
 })
 export class DarAltaComponent implements OnInit {
-  constructor() {}
+  respuesta: any;
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private _router: Router,
+    private _route: ActivatedRoute,
+    private _service: DarAltaService
+  ) {}
 
   ngOnInit() {}
   //dgrantham4@cbslocal.com user 2 y 5
-  daralta() {
-    console.log("dar alta");
+
+  darAlta() {
+    this._service
+      .darAlta(this.data.datacondultid)
+      .subscribe((data) => (this.respuesta = data));
   }
 }
