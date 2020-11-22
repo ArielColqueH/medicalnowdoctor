@@ -18,11 +18,14 @@ export class DarAltaComponent implements OnInit {
   ) {}
 
   ngOnInit() {}
-  //dgrantham4@cbslocal.com user 2 y 5
 
   darAlta() {
     this._service
       .darAlta(this.data.datacondultid)
-      .subscribe((data) => (this.respuesta = data));
+      .subscribe((data) =>
+        this._router.navigate(["consultas/" + localStorage.getItem("userId")])
+      );
+
+    //window.location.reload();
   }
 }
