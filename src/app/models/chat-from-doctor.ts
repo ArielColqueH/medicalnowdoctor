@@ -1,7 +1,7 @@
-import { ChatModel } from "./ChatModel";
+import { ConversationModel } from "./ConversationModel";
 import { PatientNameModel } from "./patient-name-model";
 
 export class ChatFromDoctor {
   patientInfo: PatientNameModel = new PatientNameModel();
-  content: ChatModel[] = [];
+  content: ConversationModel[] = [];
 }

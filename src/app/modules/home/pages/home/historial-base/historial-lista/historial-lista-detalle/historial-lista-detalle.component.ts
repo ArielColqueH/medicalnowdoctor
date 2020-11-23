@@ -8,7 +8,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class HistorialListaDetalleComponent implements OnInit {
   constructor(private _router: Router, private route: ActivatedRoute) {}
-
   ngOnInit() {}
   HistorialMedicoDetalle(consultid: number) {
     this._router.navigate(["historial-completo/" + consultid], {

@@ -18,32 +18,31 @@
     </div>
     <div class="card-lista-consultas-archivadas__button">Accion</div>
   </div>
-  <!-- <div *ngFor="let item of consultasDePaciente; let i = index"> -->
-  <div
-    class="card-lista-consultas-archivadas card-lista-consultas-archivadas--row"
-  >
-    <div class="card-lista-consultas-archivadas__paciente">
-      <!-- {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }} -->
-      Ariel Colque Herrera
-    </div>
-    <div class="card-lista-consultas-archivadas__especialidad">Odontologia</div>
-    <div class="card-lista-consultas-archivadas__fecha">
-      <!-- {{ item.startDate }} -->
-      2020/01/02
-    </div>
-    <div class="card-lista-consultas-archivadas__fecha-final">
-      <!-- {{ item.startDate }} -->
-      2020/02/01
-    </div>
-    <div class="card-lista-consultas-archivadas__button">
-      <button
-        mat-raised-button
-        class="button__normal-button"
-        (click)="activarchat()"
-      >
-        Activar
-      </button>
+  <div *ngFor="let item of listaArchivados; let i = index">
+    <div
+      class="card-lista-consultas-archivadas card-lista-consultas-archivadas--row"
+    >
+      <div class="card-lista-consultas-archivadas__paciente">
+        {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
+      </div>
+      <div class="card-lista-consultas-archivadas__especialidad">
+        {{ item.specialtyName }}
+      </div>
+      <div class="card-lista-consultas-archivadas__fecha">
+        {{ item.startDate }}
+      </div>
+      <div class="card-lista-consultas-archivadas__fecha-final">
+        {{ item.finishDate }}
+      </div>
+      <div class="card-lista-consultas-archivadas__button">
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="activarchat()"
+        >
+          Activar
+        </button>
+      </div>
     </div>
   </div>
-  <!-- </div> -->
 </div>

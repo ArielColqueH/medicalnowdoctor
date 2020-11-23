@@ -9,6 +9,7 @@ import { DarAltaComponent } from "./dar-alta/dar-alta.component";
 import { DarDiagnosticoComponent } from "./dar-diagnostico/dar-diagnostico.component";
 import { MiniChatComponent } from "./mini-chat/mini-chat.component";
 import { ActivarConsultaComponent } from "./activar-consulta/activar-consulta.component";
+import { DetallePrescripcionVistaComponent } from "./detalle-prescripcion-vista/detalle-prescripcion-vista.component";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ActivarConsultaComponent } from "./activar-consulta/activar-consulta.co
     DarDiagnosticoComponent,
     MiniChatComponent,
     ActivarConsultaComponent,
+    DetallePrescripcionVistaComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,7 @@ import { ActivarConsultaComponent } from "./activar-consulta/activar-consulta.co
     DarDiagnosticoComponent,
     MiniChatComponent,
     ActivarConsultaComponent,
+    DetallePrescripcionVistaComponent,
   ],
 })
 export class DialogsModule {}

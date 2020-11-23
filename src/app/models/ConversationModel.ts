@@ -1,4 +1,4 @@
-export class ChatModel {
+export class ConversationModel {
   roleId: number;
   message: string;
 }

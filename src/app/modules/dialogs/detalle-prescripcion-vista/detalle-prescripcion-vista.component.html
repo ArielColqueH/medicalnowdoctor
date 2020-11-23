@@ -1,0 +1,48 @@
+<div class="dialog__container">
+  <mat-dialog-content>
+    <div class="dialog__subtitle">
+      <div class="dialog__subtitle-content">
+        <div class="dialog__subtitle-text">Detalle de Prescripcion</div>
+        <div class="dialog__subtitle-button"></div>
+      </div>
+      <div class="dialog__subtitle-line"></div>
+    </div>
+    <div class="dialog__descripcion mt-3">Descripcion</div>
+    <div class="">{{ descriptionDetail.description }}</div>
+    <div
+      class=""
+      *ngIf="this.descriptionDetail.prescription_detail.length !== 0"
+    >
+      <div class="dialog-prescripcion dialog-prescripcion--header">
+        <div class="dialog-prescripcion__nombre-producto">
+          Nombre del Producto
+        </div>
+        <div class="dialog-prescripcion__nombre-detalle">Detalle</div>
+        <div class="dialog-prescripcion__nombre-cantidad">Cantidad</div>
+      </div>
+      <div
+        class=""
+        *ngFor="
+          let item of descriptionDetail.prescription_detail;
+          let i = index
+        "
+      >
+        <div class="dialog-prescripcion dialog-prescripcion--row">
+          <div class="dialog-prescripcion__nombre-producto">
+            {{ item.productName }}
+          </div>
+          <div class="dialog-prescripcion__nombre-detalle">
+            {{ item.productDetail }}
+          </div>
+          <div class="dialog-prescripcion__nombre-cantidad">
+            {{ item.productQtty }}
+          </div>
+        </div>
+        <div class="dialog__detalle-line"></div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</div>
