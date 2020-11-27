@@ -2,7 +2,10 @@
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
       <div class="title__text">
-        Historial Medico de Paciente : Ariel Colque Herrera
+        Historial Medico de Paciente :
+        {{ listMedicalHistory.patientInfo.firstName }}
+        {{ listMedicalHistory.patientInfo.firstSurname }}
+        {{ listMedicalHistory.patientInfo.secondSurname }}
       </div>
       <div class="title__row"></div>
     </div>
@@ -12,25 +15,23 @@
     <div class="card-lista-hoja-vida__estado">Estado</div>
     <div class="card-lista-hoja-vida__button">Acciones</div>
   </div>
-  <!-- <div *ngFor="let item of medicalHitoryHoja.content; let i = index"> -->
-  <div class="card-lista-hoja-vida card-lista-hoja-vida--row">
-    <div class="card-lista-hoja-vida__fecha">
-      2020/12/01
-      <!-- {{ item.startDate }} -->
-    </div>
-    <div class="card-lista-hoja-vida__estado">
-      <!-- {{ item.status == 1 ? "Activo" : "Inactivo" }} -->
-      Activo
-    </div>
-    <div class="card-lista-hoja-vida__button">
-      <button
-        mat-raised-button
-        class="button__normal-button"
-        (click)="HistorialMedicoDetalle(1)"
-      >
-        Ver
-      </button>
+  <div *ngFor="let item of listMedicalHistory.content; let i = index">
+    <div class="card-lista-hoja-vida card-lista-hoja-vida--row">
+      <div class="card-lista-hoja-vida__fecha">
+        {{ item.startDate }}
+      </div>
+      <div class="card-lista-hoja-vida__estado">
+        {{ item.status == 1 ? "Activo" : "Inactivo" }}
+      </div>
+      <div class="card-lista-hoja-vida__button">
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="HistorialMedicoDetalle(item.consultId)"
+        >
+          Ver
+        </button>
+      </div>
     </div>
   </div>
-  <!-- </div> -->
 </div>

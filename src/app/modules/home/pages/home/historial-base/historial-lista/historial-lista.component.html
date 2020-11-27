@@ -12,29 +12,26 @@
     <div class="card-lista-historial__button">Accion</div>
   </div>
 
-  <!-- <div *ngFor="let item of medicalHsitoryListModel; let i = index"> -->
-  <div class="card-lista-historial card-lista-historial--row">
-    <div class="card-lista-historial__nombre-paciente">
-      ariel
-      <!-- {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }} -->
-    </div>
-    <div class="card-lista-historial__especialidad">
-      asasa
-      <!-- {{ item.specialtyName }} -->
-    </div>
-    <div class="card-lista-historial__fecha">
-      <!-- {{ item.startDate }} -->
-      2020/01/20
-    </div>
-    <div class="card-lista-historial__button">
-      <button
-        mat-raised-button
-        class="button__normal-button"
-        (click)="irHistorialGeneral(1)"
-      >
-        Ver detalle
-      </button>
+  <div *ngFor="let item of medicalHsitoryListModel; let i = index">
+    <div class="card-lista-historial card-lista-historial--row">
+      <div class="card-lista-historial__nombre-paciente">
+        {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
+      </div>
+      <div class="card-lista-historial__especialidad">
+        {{ item.specialtyName }}
+      </div>
+      <div class="card-lista-historial__fecha">
+        {{ item.startDate }}
+      </div>
+      <div class="card-lista-historial__button">
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="irHistorialGeneral(item.medicalHistoryId)"
+        >
+          Ver detalle
+        </button>
+      </div>
     </div>
   </div>
-  <!-- </div> -->
 </div>

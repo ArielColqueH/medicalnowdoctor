@@ -1,8 +1,11 @@
-import { HostListener } from "@angular/core";
+import { HostListener, ɵConsole } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { InformacionConsultasService } from "src/app/core/http/services/informacion-consultas.service";
+import { InformacionGeneralService } from "src/app/core/http/services/informacion-general.service";
 import { UserConfigurationService } from "src/app/core/http/services/user-configuration.service";
-import { UserConfigurationModel } from "src/app/models/user-configuration-model";
+import { DoctorInfoModel } from "src/app/models/doctor-info-model";
+import { User } from "src/app/models/user";
 @Component({
   selector: "app-configuraciones",
   templateUrl: "./configuraciones.component.html",
@@ -10,34 +13,41 @@ import { UserConfigurationModel } from "src/app/models/user-configuration-model"
 })
 export class ConfiguracionesComponent implements OnInit {
   ciudad_combo: String[] = ["La Paz", "Cochabamba", "Santa Cruz"];
-  configuraciones = new UserConfigurationModel();
-  usuario = new UserConfigurationModel();
-
-  //datos = new UserConfigurationModel();
+  user = new User();
+  userConsult = new DoctorInfoModel();
 
   constructor(
-    private _service: UserConfigurationService,
+    private _service: InformacionGeneralService,
+    private _serviceConsult: InformacionConsultasService,
     private _router: Router
   ) {}
 
   ngOnInit() {
-    this.Obtenerdatos();
+    this.ObtenerdatosUsuario();
+    this.ObtenerdatosConsultas();
   }
 
-  Obtenerdatos() {
-    // this._service
-    //   .obtenerDatosConfiguration()
-    //   .subscribe((data) => (this.usuario = data));
+  ObtenerdatosUsuario() {
+    this._service.getUserInfo().subscribe((data) => (this.user = data));
   }
 
-  datosActualizados() {
-    // this._service.datosActualizadosFromRemote(this.datos).subscribe(
-    //   (data) => {
-    //     console.log("actualizados");
-    //   },
-    //   (error) => {
-    //     console.log("exception ocurred");
-    //   }
-    // )
+  ObtenerdatosConsultas() {
+    this._serviceConsult
+      .getUserInfoConsult()
+      .subscribe((data) => (this.userConsult = data));
+  }
+
+  actualizarGenerales() {
+    this._service
+      .updateUserInfo(this.user)
+      .subscribe((data) => (this.user = data));
+    window.location.reload();
+  }
+
+  actualizarConsultas() {
+    this._serviceConsult
+      .updateUserInfoConsult(this.userConsult)
+      .subscribe((data) => (this.userConsult = data));
+    window.location.reload();
   }
 }

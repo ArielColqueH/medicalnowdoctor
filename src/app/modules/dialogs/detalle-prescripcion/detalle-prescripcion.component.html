@@ -31,7 +31,10 @@
       </button>
     </div>
     <div class="dialog__detalle-line"></div>
-    <div class="" *ngFor="let item of descripcion.content; let i = index">
+    <div
+      class=""
+      *ngFor="let item of descripcion.prescription_detail; let i = index"
+    >
       <div class="dialog-prescripcion dialog-prescripcion--row">
         <mat-form-field class="dialog-prescripcion__nombre-producto">
           <mat-label>Nombre</mat-label>

@@ -9,7 +9,7 @@
             class="input-form"
             matInput
             placeholder="Nombre"
-            [(ngModel)]="usuario.firstName"
+            [(ngModel)]="user.firstName"
             name="nombre"
           />
           <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
@@ -21,7 +21,7 @@
             class="input-form"
             matInput
             placeholder="Apellido Paterno"
-            [(ngModel)]="usuario.firstSurname"
+            [(ngModel)]="user.firstSurname"
             name="apellidoPaterno"
           />
           <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
@@ -33,7 +33,7 @@
             class="input-form"
             matInput
             placeholder="Apellido Materno"
-            [(ngModel)]="usuario.secondSurname"
+            [(ngModel)]="user.secondSurname"
             name="apellidoMaterno"
           />
           <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
@@ -45,7 +45,7 @@
             class="input-form"
             matInput
             placeholder="Numero de Celular"
-            [(ngModel)]="usuario.phoneNumber"
+            [(ngModel)]="user.phoneNumber"
             name="celular"
           />
           <mat-icon matSuffix class="modal-container__icon"
@@ -59,7 +59,7 @@
             class="input-form"
             matInput
             placeholder="Fecha de nacimiento"
-            [(ngModel)]="usuario.birthDate"
+            [(ngModel)]="user.birthDate"
             name="fechaNacimiento"
           />
           <mat-icon matSuffix class="modal-container__icon">person</mat-icon>
@@ -72,29 +72,29 @@
             matInput
             placeholder="ejemplo@ejemplo.com"
             name="correo"
-            [(ngModel)]="usuario.email"
+            [(ngModel)]="user.email"
           />
           <mat-icon matSuffix class="modal-container__icon">email</mat-icon>
         </mat-form-field>
 
-        <mat-form-field class="modal-container__inputs--width">
+        <!-- <mat-form-field class="modal-container__inputs--width">
           <mat-label>Contraseña</mat-label>
           <input
             class="input-form"
             matInput
             placeholder="**********"
             name="contrasenia"
-            [(ngModel)]="usuario.password"
+            [(ngModel)]="user.password"
             type="password"
             autocomplete="new-password"
           />
           <mat-icon matSuffix class="modal-container__icon">https</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
       </form>
       <button
         mat-raised-button
         class="button__large-button"
-        (click)="datosActualizados()"
+        (click)="actualizarGenerales()"
       >
         Guardar Datos
       </button>
@@ -112,7 +112,7 @@
             class="input-form"
             matInput
             placeholder="Ex : 100"
-            [(ngModel)]="usuario.firstName"
+            [(ngModel)]="userConsult.price"
             name="nombre"
           />
           <mat-icon matSuffix class="modal-container__icon">money</mat-icon>
@@ -124,7 +124,7 @@
             class="input-form"
             matInput
             placeholder="Ex 14:00:00"
-            [(ngModel)]="usuario.phoneNumber"
+            [(ngModel)]="userConsult.fromTime"
             name="horarioInicio"
           />
           <mat-icon matSuffix class="modal-container__icon">schedule</mat-icon>
@@ -136,7 +136,7 @@
             class="input-form"
             matInput
             placeholder="Ex 18:00:00"
-            [(ngModel)]="usuario.birthDate"
+            [(ngModel)]="userConsult.toTime"
             name="horarioFin"
           />
           <mat-icon matSuffix class="modal-container__icon">schedule</mat-icon>
@@ -145,7 +145,7 @@
       <button
         mat-raised-button
         class="button__large-button"
-        (click)="datosActualizados()"
+        (click)="actualizarConsultas()"
       >
         Guardar Datos
       </button>

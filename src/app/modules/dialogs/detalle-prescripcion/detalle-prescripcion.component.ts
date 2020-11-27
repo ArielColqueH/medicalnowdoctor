@@ -30,11 +30,11 @@ export class DetallePrescripcionComponent implements OnInit {
       productDetail: "",
       productQtty: "",
     };
-    this.descripcion.content.push(aux);
+    this.descripcion.prescription_detail.push(aux);
   }
   eliminardelista(listaid: number) {
     console.log(listaid);
-    this.descripcion.content.splice(listaid, 1);
+    this.descripcion.prescription_detail.splice(listaid, 1);
   }
   enviarprescripcion() {
     this._service
