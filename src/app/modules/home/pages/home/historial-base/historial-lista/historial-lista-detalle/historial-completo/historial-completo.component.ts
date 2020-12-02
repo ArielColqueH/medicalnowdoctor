@@ -2,7 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
 import { HistorialMedicoService } from "src/app/core/http/services/historial-medico.service";
+import { DescriptionModel } from "src/app/models/description-model";
 import { HistorialMedico } from "src/app/models/historial-medico";
+import { MedicalDataModel } from "src/app/models/medical-data-model";
 import { DetallePrescripcionVistaComponent } from "src/app/modules/dialogs/detalle-prescripcion-vista/detalle-prescripcion-vista.component";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
 import { MiniChatComponent } from "src/app/modules/dialogs/mini-chat/mini-chat.component";
@@ -15,6 +17,19 @@ import { HistorialListaDetalleComponent } from "../historial-lista-detalle.compo
 })
 export class HistorialCompletoComponent implements OnInit {
   historialMedico = new HistorialMedico();
+  medicalDataModel = new MedicalDataModel();
+  grupoSanguineo: string[] = [
+    "O negativo",
+    "O positivo",
+    "A negativo",
+    "A positivo",
+    "B negativo",
+    "B positivo",
+    "AB negativo",
+    "AB positivo",
+  ];
+  descriptionModelAlergias = new DescriptionModel();
+  descriptionModelPrevios = new DescriptionModel();
   constructor(
     public dialog: MatDialog,
     private _router: Router,
