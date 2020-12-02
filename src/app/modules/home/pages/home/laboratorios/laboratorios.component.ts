@@ -14,24 +14,24 @@ export class LaboratoriosComponent implements OnInit {
   //listlaboratory: Laboratory[];
 
   listlaboratory: Laboratory[] = [
-    {
-      laboratoryExamsId: "1",
-      laboratoryName: "Electrocardiograma",
-      doctorFirstName: "Mario",
-      doctorFirstSurname: "Rojas",
-      specialtyName: "Lopez",
-      laboratoryOrderDate: "2020/1/12",
-      labExamOrder: "5",
-    },
-    {
-      laboratoryExamsId: "2",
-      laboratoryName: "Electrocardiograma 2",
-      doctorFirstName: "Mariana",
-      doctorFirstSurname: "Lucero",
-      specialtyName: "Justina",
-      laboratoryOrderDate: "2020/1/13",
-      labExamOrder: "6",
-    },
+    // {
+    //   laboratoryExamsId: "1",
+    //   laboratoryName: "Electrocardiograma",
+    //   doctorFirstName: "Mario",
+    //   doctorFirstSurname: "Rojas",
+    //   specialtyName: "Lopez",
+    //   laboratoryOrderDate: "2020/1/12",
+    //   labExamOrder: "5",
+    // },
+    // {
+    //   laboratoryExamsId: "2",
+    //   laboratoryName: "Electrocardiograma 2",
+    //   doctorFirstName: "Mariana",
+    //   doctorFirstSurname: "Lucero",
+    //   specialtyName: "Justina",
+    //   laboratoryOrderDate: "2020/1/13",
+    //   labExamOrder: "6",
+    // },
   ];
 
   constructor(private _service: LaboratoryService, private _router: Router) {}
@@ -41,9 +41,8 @@ export class LaboratoriosComponent implements OnInit {
   }
 
   ObtenerDatos() {
-    // this._service
-    //   .listLaboratory()
-    //   .subscribe((data) => (this.listlaboratory = data));
-    // this.aux = this.listlaboratory;
+    this._service
+      .listLaboratory()
+      .subscribe((data) => (this.listlaboratory = data));
   }
 }

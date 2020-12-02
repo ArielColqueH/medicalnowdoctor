@@ -5,19 +5,17 @@ import { config } from "src/app/models/auth/config";
 @Injectable({
   providedIn: "root",
 })
-export class LaboratoryService {
+export class ObtenerImagenService {
   constructor(private _http: HttpClient) {}
 
-  listLaboratory() {
+  getImage(consultId: string) {
+    console.log("consult id :" + consultId);
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
-    return this._http.get<any>(
-      `${config.apiUrl}/laboratories/doctor/` + localStorage.getItem("userId"),
-      {
-        headers: reqHeader,
-      }
-    );
+    return this._http.get<any>(`${config.apiUrl}/chat/` + 2 + `/get/images`, {
+      headers: reqHeader,
+    });
   }
 }

@@ -8,6 +8,7 @@ import { MessageModel } from "src/app/models/message-model";
 import { DarAltaComponent } from "src/app/modules/dialogs/dar-alta/dar-alta.component";
 import { DarDiagnosticoComponent } from "src/app/modules/dialogs/dar-diagnostico/dar-diagnostico.component";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
+import { VerImagenesComponent } from "src/app/modules/dialogs/ver-imagenes/ver-imagenes.component";
 
 @Component({
   selector: "app-consulta-individual",
@@ -129,5 +130,13 @@ export class ConsultaIndividualComponent implements OnInit {
       .subscribe((data) => (this.chat = data));
     this.mensaje = "";
     window.location.reload();
+  }
+  verImagenes() {
+    const dialogRef = this.dialog.open(VerImagenesComponent, {
+      width: "1000px",
+      data: {
+        consutlId: this.consultId,
+      },
+    });
   }
 }

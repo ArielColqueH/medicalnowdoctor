@@ -37,6 +37,13 @@
       (change)="handleFileInput($event.target.files)"
     />
     <button
+      (click)="verImagenes()"
+      mat-fab
+      class="circle-button--primary circle-button__chat"
+    >
+      <mat-icon>photo_library</mat-icon>
+    </button>
+    <button
       (click)="csvInput.click()"
       mat-fab
       class="circle-button--primary circle-button__chat"

@@ -26,10 +26,18 @@ export class PrescripcionesComponent implements OnInit {
     private _route: ActivatedRoute
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.ObtenerDatos();
+  }
   openDialog() {
     this._router.navigate(["prescripcion-detalle"], {
       relativeTo: this._route,
     });
+  }
+
+  ObtenerDatos() {
+    // this._service
+    //   .listConsultsPatients()
+    //   .subscribe((data) => (this.consultasDePaciente = data));
   }
 }

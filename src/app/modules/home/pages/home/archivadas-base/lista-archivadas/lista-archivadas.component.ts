@@ -24,11 +24,11 @@ export class ListaArchivadasComponent implements OnInit {
     this.ObtenerDatos();
   }
 
-  activarchat() {
+  activarchat(consultId: number) {
     const dialogRef = this.dialog.open(ActivarConsultaComponent, {
       width: "600px",
       data: {
-        dataconsultid: this.consultId,
+        consultId: this.consultId,
       },
     });
 

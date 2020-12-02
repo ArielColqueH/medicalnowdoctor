@@ -10,6 +10,7 @@ import { DarDiagnosticoComponent } from "./dar-diagnostico/dar-diagnostico.compo
 import { MiniChatComponent } from "./mini-chat/mini-chat.component";
 import { ActivarConsultaComponent } from "./activar-consulta/activar-consulta.component";
 import { DetallePrescripcionVistaComponent } from "./detalle-prescripcion-vista/detalle-prescripcion-vista.component";
+import { VerImagenesComponent } from "./ver-imagenes/ver-imagenes.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DetallePrescripcionVistaComponent } from "./detalle-prescripcion-vista/
     MiniChatComponent,
     ActivarConsultaComponent,
     DetallePrescripcionVistaComponent,
+    VerImagenesComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { DetallePrescripcionVistaComponent } from "./detalle-prescripcion-vista/
     MiniChatComponent,
     ActivarConsultaComponent,
     DetallePrescripcionVistaComponent,
+    VerImagenesComponent,
   ],
 })
 export class DialogsModule {}
