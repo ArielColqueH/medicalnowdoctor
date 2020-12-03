@@ -8,13 +8,16 @@ import { config } from "src/app/models/auth/config";
 export class PrescriptionListDetailDateService {
   constructor(private _http: HttpClient) {}
 
-  listPrescriptionDatailDate() {
+  listPrescriptionDatailDate(consultId: string) {
     var tokenUser = localStorage.getItem("JWT_TOKEN");
     const reqHeader = new HttpHeaders({
       Authorization: "bearer " + tokenUser,
     });
-    return this._http.get<any>(`${config.apiUrl}/prescription/` + 1 + `/all`, {
-      headers: reqHeader,
-    });
+    return this._http.get<any>(
+      `${config.apiUrl}/prescription/` + consultId + `/all`,
+      {
+        headers: reqHeader,
+      }
+    );
   }
 }

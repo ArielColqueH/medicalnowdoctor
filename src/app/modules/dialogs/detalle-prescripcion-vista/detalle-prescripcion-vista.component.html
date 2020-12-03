@@ -9,6 +9,7 @@
     </div>
     <div class="dialog__descripcion mt-3">Descripcion</div>
     <div class="">{{ descriptionDetail.description }}</div>
+
     <div
       class=""
       *ngIf="this.descriptionDetail.prescription_detail.length !== 0"
@@ -20,6 +21,7 @@
         <div class="dialog-prescripcion__nombre-detalle">Detalle</div>
         <div class="dialog-prescripcion__nombre-cantidad">Cantidad</div>
       </div>
+      <div class="dialog__detalle-line"></div>
       <div
         class=""
         *ngFor="
@@ -38,7 +40,6 @@
             {{ item.productQtty }}
           </div>
         </div>
-        <div class="dialog__detalle-line"></div>
       </div>
     </div>
   </mat-dialog-content>

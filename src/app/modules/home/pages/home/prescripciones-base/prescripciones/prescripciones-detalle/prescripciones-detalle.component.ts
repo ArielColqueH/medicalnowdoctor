@@ -5,6 +5,7 @@ import { PrescriptionListDetailDateService } from "src/app/core/http/services/pr
 import { PrescriptionItem } from "src/app/models/prescription-item";
 import { PrescriptionModelJSON } from "src/app/models/prescription-model-json";
 import { DetallePrescripcionVistaComponent } from "src/app/modules/dialogs/detalle-prescripcion-vista/detalle-prescripcion-vista.component";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-prescripciones-detalle",
@@ -14,6 +15,8 @@ import { DetallePrescripcionVistaComponent } from "src/app/modules/dialogs/detal
 export class PrescripcionesDetalleComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
+    private _router: Router,
+    private _route: ActivatedRoute,
     private _service: PrescriptionListDetailDateService
   ) {}
   listaPrescriptionDetail = new PrescriptionModelJSON();
@@ -35,7 +38,7 @@ export class PrescripcionesDetalleComponent implements OnInit {
 
   ObtenerDatos() {
     this._service
-      .listPrescriptionDatailDate()
+      .listPrescriptionDatailDate(this._route.snapshot.paramMap.get("id"))
       .subscribe((data) => (this.listaPrescriptionDetail = data));
   }
 }

@@ -28,14 +28,14 @@
       <mat-icon>offline_pin</mat-icon>
     </button>
 
-    <input
+    <!-- <input
       #csvInput
       hidden="true"
       type="file"
       onclick="this.value=null"
       accept=".png,.jpg"
       (change)="handleFileInput($event.target.files)"
-    />
+    /> -->
     <button
       (click)="verImagenes()"
       mat-fab
@@ -43,13 +43,13 @@
     >
       <mat-icon>photo_library</mat-icon>
     </button>
-    <button
+    <!-- <button
       (click)="csvInput.click()"
       mat-fab
       class="circle-button--primary circle-button__chat"
     >
       <mat-icon>attachment</mat-icon>
-    </button>
+    </button> -->
     <button
       (click)="enviarMensaje()"
       mat-fab
