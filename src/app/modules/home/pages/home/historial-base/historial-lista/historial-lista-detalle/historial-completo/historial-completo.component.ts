@@ -17,7 +17,6 @@ import { HistorialListaDetalleComponent } from "../historial-lista-detalle.compo
 })
 export class HistorialCompletoComponent implements OnInit {
   historialMedico = new HistorialMedico();
-  medicalDataModel = new MedicalDataModel();
   grupoSanguineo: string[] = [
     "O negativo",
     "O positivo",
@@ -28,8 +27,7 @@ export class HistorialCompletoComponent implements OnInit {
     "AB negativo",
     "AB positivo",
   ];
-  descriptionModelAlergias = new DescriptionModel();
-  descriptionModelPrevios = new DescriptionModel();
+
   constructor(
     public dialog: MatDialog,
     private _router: Router,

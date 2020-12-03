@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
+import { PrescriptionListService } from "src/app/core/http/services/prescription-list.service";
 import { PrescriptionItem } from "src/app/models/prescription-item";
+import { PrescriptionListModel } from "src/app/models/prescriptionlistmodel";
 import { DetallePrescripcionComponent } from "src/app/modules/dialogs/detalle-prescripcion/detalle-prescripcion.component";
 import { MiniChatComponent } from "src/app/modules/dialogs/mini-chat/mini-chat.component";
 
@@ -11,33 +13,26 @@ import { MiniChatComponent } from "src/app/modules/dialogs/mini-chat/mini-chat.c
   styleUrls: ["./prescripciones.component.scss"],
 })
 export class PrescripcionesComponent implements OnInit {
-  listPrescriptionItem: PrescriptionItem[] = [
-    {
-      historialId: 1,
-      prescripcionid: 1,
-      patientName: "Ariel Colque Herrera",
-      specialty: "Odontologia",
-      date: "12/12/2002",
-    },
-  ];
+  listPrescriptionItem: PrescriptionListModel[];
   constructor(
     public dialog: MatDialog,
     private _router: Router,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _service: PrescriptionListService
   ) {}
 
   ngOnInit() {
     this.ObtenerDatos();
   }
-  openDialog() {
-    this._router.navigate(["prescripcion-detalle"], {
+  openDialog(consultId: number) {
+    this._router.navigate(["prescripcion-detalle/" + consultId], {
       relativeTo: this._route,
     });
   }
 
   ObtenerDatos() {
-    // this._service
-    //   .listConsultsPatients()
-    //   .subscribe((data) => (this.consultasDePaciente = data));
+    this._service
+      .listPrescription()
+      .subscribe((data) => (this.listPrescriptionItem = data));
   }
 }

@@ -16,19 +16,17 @@
   <div *ngFor="let item of listPrescriptionItem; let i = index">
     <div class="card-lista-prescripcion card-lista-prescripcion--row">
       <div class="card-lista-prescripcion__nombre-doctor">
-        {{ item.patientName }}
+        {{ item.specialtyName }}
       </div>
       <div class="card-lista-prescripcion__nombre-especialista">
-        {{ item.specialty }}
+        {{ item.firstName }} {{ item.firstSurname }} {{ item.secondSurname }}
       </div>
-      <div class="card-lista-prescripcion__fecha">
-        {{ item.date }}
-      </div>
+      <div class="card-lista-prescripcion__fecha">{{ item.consultDate }}</div>
       <div class="card-lista-prescripcion__button">
         <button
           mat-raised-button
           class="button__normal-button"
-          (click)="openDialog()"
+          (click)="openDialog(item.consultId)"
         >
           Ver
         </button>

@@ -2,7 +2,7 @@
   <div fxLayout="row" class="mt-5">
     <div class="title" fxFlex>
       <div class="title__text">
-        Prescripciones detalle | Mariana Cardozo Costa | Odontologia
+        Prescripciones detalle | {{ listaPrescriptionDetail.specialty_name }}
       </div>
       <div class="title__row"></div>
     </div>
@@ -11,20 +11,20 @@
     <div class="card-lista-prescripcion__fecha">Fecha Pres.</div>
     <div class="card-lista-prescripcion__button">Acciones</div>
   </div>
-  <!-- <div *ngFor="let item of listPrescriptionItem; let i = index"> -->
-  <div class="card-lista-prescripcion card-lista-prescripcion--row">
-    <div class="card-lista-prescripcion__fecha">
-      <!-- {{ item.prescriptionDate }} -->2020/01/01
-    </div>
-    <div class="card-lista-prescripcion__button">
-      <button
-        mat-raised-button
-        class="button__normal-button"
-        (click)="openDialog()"
-      >
-        Ver Detalle
-      </button>
+  <div *ngFor="let item of listaPrescriptionDetail.content; let i = index">
+    <div class="card-lista-prescripcion card-lista-prescripcion--row">
+      <div class="card-lista-prescripcion__fecha">
+        {{ item.prescriptionDate }}
+      </div>
+      <div class="card-lista-prescripcion__button">
+        <button
+          mat-raised-button
+          class="button__normal-button"
+          (click)="openDialog(item.prescriptionId)"
+        >
+          Ver Detalle
+        </button>
+      </div>
     </div>
   </div>
-  <!-- </div> -->
 </div>

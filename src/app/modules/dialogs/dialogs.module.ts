@@ -36,8 +36,8 @@ import { VerImagenesComponent } from "./ver-imagenes/ver-imagenes.component";
     DarDiagnosticoComponent,
     MiniChatComponent,
     ActivarConsultaComponent,
-    DetallePrescripcionVistaComponent,
     VerImagenesComponent,
+    DetallePrescripcionVistaComponent,
   ],
 })
 export class DialogsModule {}
